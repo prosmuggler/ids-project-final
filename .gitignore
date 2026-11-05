@@ -1,4 +1,4 @@
-/data/raw/
+/data/
 .venv/
 venv/
 __pycache__/
