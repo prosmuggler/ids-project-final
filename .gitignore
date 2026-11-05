@@ -6,3 +6,5 @@ __pycache__/
 mlruns/
 .ipynb_checkpoints/
 .DS_Store
+
+/data/processed/
