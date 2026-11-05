@@ -1,0 +1,6 @@
+attack_type,train,val,test
+Normal,216675,46431,46431
+Grayhole,7591,1626,1627
+TDMA,4033,864,865
+Blackhole,2958,634,633
+Flooding,2207,473,473
