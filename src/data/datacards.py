@@ -15,7 +15,7 @@ CARDS = {
         "sampling": "Attack folders under {keep_mb} MB keep 100% of rows (rare classes); larger folders are sampled at {frac:.0%}.",
         "time": "No timestamps. The temporal split orders rows by capture-file number within each attack. This ASSUMES file numbers follow capture order, which the dataset does not guarantee.",
         "limits": [
-            "Label conflicts: in the random split, 26,706 test rows (5.6%) have exactly the same features as a train row; 21,299 of them (4.4% of test) carry a different `category`, but only 53 differ at the `binary` level. Category/attack-type accuracy therefore has a ceiling of roughly 96%, while binary detection is essentially unaffected.",
+            "Label conflicts and overlap: in the random split, 26,706 test rows (5.6%) have exactly the same features as a train row; 21,299 of them (4.4% of test) carry a different `category`, but only 53 differ at the `binary` level. Exact conflicts are only part of the overlap: near-identical flows make DoS vs DDoS and Benign vs Recon hard to separate (see results/imbalance), so category-level scores stay well below the exact-conflict bound.",
             "Heavy class imbalance (DDoS is 56% of rows, BruteForce 0.4%).",
             "Flow-level features only; no payload content. Results come from a single lab testbed and may not transfer to other networks.",
             "Cleaning removed a large share of duplicate rows, so the processed set is smaller than the published dataset.",
