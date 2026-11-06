@@ -1,0 +1,13 @@
+{
+  "accuracy": 0.9943031902134805,
+  "balanced_acc": 0.9742887121990084,
+  "macro_f1": 0.9603800218468027,
+  "weighted_f1": 0.9943456435060166,
+  "macro_precision": 0.9477879674346384,
+  "fit_seconds": 2.0404043197631836,
+  "model": "rf",
+  "dataset": "wsn_ds",
+  "level": "category",
+  "k": "all",
+  "imbalance": "class_weight"
+}

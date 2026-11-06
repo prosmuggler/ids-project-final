@@ -1,0 +1,13 @@
+{
+  "accuracy": 0.9949228432078037,
+  "balanced_acc": 0.970989857780974,
+  "macro_f1": 0.9628139851798518,
+  "weighted_f1": 0.9949349229885752,
+  "macro_precision": 0.9552459061216789,
+  "fit_seconds": 9.901576042175293,
+  "model": "lgbm",
+  "dataset": "wsn_ds",
+  "level": "category",
+  "k": "all",
+  "imbalance": "class_weight"
+}

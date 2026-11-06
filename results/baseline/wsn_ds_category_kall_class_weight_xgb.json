@@ -1,0 +1,13 @@
+{
+  "accuracy": 0.9940233469257216,
+  "balanced_acc": 0.975960513310224,
+  "macro_f1": 0.9579973555816631,
+  "weighted_f1": 0.9940865025512804,
+  "macro_precision": 0.9413534443023224,
+  "fit_seconds": 2.949563980102539,
+  "model": "xgb",
+  "dataset": "wsn_ds",
+  "level": "category",
+  "k": "all",
+  "imbalance": "class_weight"
+}

@@ -1,0 +1,14 @@
+{
+  "accuracy": 0.7764176986879305,
+  "balanced_acc": 0.7740482871432957,
+  "macro_f1": 0.672858091777393,
+  "weighted_f1": 0.792954771907796,
+  "macro_precision": 0.6553128452295625,
+  "false_alarm_rate": 0.2207089438803429,
+  "fit_seconds": 54.99440813064575,
+  "model": "lgbm",
+  "dataset": "ciciot2023",
+  "level": "category",
+  "k": "30",
+  "imbalance": "class_weight"
+}
