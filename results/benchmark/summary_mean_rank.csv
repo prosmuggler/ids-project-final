@@ -1,0 +1,10 @@
+model,mean_rank
+xgb,2.6
+rf,2.8
+catboost,3.5
+lgbm,3.7
+knn,4.9
+dt,5.5
+lr,6.7
+svm_linear,7.1
+nb,8.2

@@ -1,0 +1,13 @@
+experiment: ids-benchmark
+imbalance: class_weight          # decision from Objective 1
+models: [lr, nb, knn, dt, rf, svm_linear, xgb, lgbm, catboost]
+# models too slow for ~2M rows are trained/scored on stratified subsamples (>=200 rows per class)
+caps:
+  knn:        {train: 200000, val: 50000}
+  svm_linear: {train: 300000}
+runs:
+  - {dataset: wsn_ds,     level: binary,      k: all}
+  - {dataset: wsn_ds,     level: category,    k: all}   # attack_type is identical for WSN-DS
+  - {dataset: ciciot2023, level: binary,      k: 30}
+  - {dataset: ciciot2023, level: category,    k: 30}
+  - {dataset: ciciot2023, level: attack_type, k: 30}
