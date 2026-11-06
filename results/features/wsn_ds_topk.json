@@ -1,0 +1,31 @@
+{
+  "10": [
+    "ADV_S",
+    "Expended_Energy",
+    "Is_CH",
+    "SCH_S",
+    "Rank",
+    "Data_Sent_To_BS",
+    "ADV_R",
+    "JOIN_S",
+    "DATA_R",
+    "dist_CH_To_BS"
+  ],
+  "all": [
+    "ADV_S",
+    "Expended_Energy",
+    "Is_CH",
+    "SCH_S",
+    "Rank",
+    "Data_Sent_To_BS",
+    "ADV_R",
+    "JOIN_S",
+    "DATA_R",
+    "dist_CH_To_BS",
+    "send_code",
+    "JOIN_R",
+    "Dist_To_CH",
+    "DATA_S",
+    "SCH_R"
+  ]
+}
