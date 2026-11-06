@@ -8,3 +8,5 @@ mlruns/
 .DS_Store
 
 /data/processed/
+catboost_info/
+mlflow.db

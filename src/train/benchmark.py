@@ -54,11 +54,14 @@ def make(name, seed, cw):
         return XGBClassifier(n_estimators=200, max_depth=8, learning_rate=0.1, tree_method="hist",
                              n_jobs=-1, random_state=seed)
     if name == "lgbm":
-        # with 34 classes the full balanced weights (up to ~100x) made LightGBM diverge (macro-F1 0.16),
-        # so for many-class problems use the square root of the balanced weights
-        w = {k: float(v) ** 0.5 for k, v in cw.items()} if (cw and len(cw) > 20) else cw
-        return LGBMClassifier(n_estimators=200, num_leaves=63, learning_rate=0.1, n_jobs=-1,
-                              class_weight=w, random_state=seed, verbose=-1)
+        params, w = dict(learning_rate=0.1), cw
+        if cw and len(cw) > 20:
+            # 34 classes: default settings diverged (val loss rose after ~20 rounds; macro-F1 0.12-0.16
+            # even without class weights), so use sqrt weights, a smaller step and stronger regularisation
+            w = {k: float(v) ** 0.5 for k, v in cw.items()}
+            params = dict(learning_rate=0.05, min_child_samples=100, reg_lambda=5)
+        return LGBMClassifier(n_estimators=200, num_leaves=63, n_jobs=-1, class_weight=w,
+                              random_state=seed, verbose=-1, **params)
     if name == "catboost":
         return CatBoostClassifier(iterations=300, depth=8, learning_rate=0.1, thread_count=-1,
                                   auto_class_weights="Balanced", random_seed=seed, verbose=0)
