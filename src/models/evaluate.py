@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.metrics import (accuracy_score, balanced_accuracy_score, confusion_matrix,
                              f1_score, precision_score, recall_score)
 
-BENIGN = {"binary": 0, "category": "Benign", "attack_type": "Benign"}
+BENIGN = {"binary": 0, "category": ("Benign", "Normal"), "attack_type": ("Benign", "Normal")}
 
 
 def evaluate(y_true, y_pred, level):
@@ -18,6 +18,8 @@ def evaluate(y_true, y_pred, level):
          "weighted_f1": f1_score(y_true, y_pred, average="weighted", zero_division=0),
          "macro_precision": precision_score(y_true, y_pred, average="macro", zero_division=0)}
     b = BENIGN[level]
-    if b in per_class.index:
-        m["false_alarm_rate"] = 1 - per_class[b]   # share of benign flows NOT recognised as benign
+    b = [b] if not isinstance(b, tuple) else list(b)
+    b = [x for x in b if x in per_class.index]
+    if b:
+        m["false_alarm_rate"] = 1 - per_class[b[0]]   # share of benign flows NOT recognised as benign
     return m, per_class, cm
