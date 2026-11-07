@@ -1,0 +1,1163 @@
+=== --dataset wsn_ds --level binary --models dt,lgbm,xgb --seeds 43,44,45,46
+wsn_ds/binary: classes=2 train=233,464 test=50,029
+
+[start] dt seed 43 at 16:54:01
+[dt] TEST macro_f1=0.9749 bal_acc=0.9723 FA=0.0031 AUC=0.9723 fit=1s size=0.3MB
+
+[start] lgbm seed 43 at 16:54:01
+[lgbm] TEST macro_f1=0.9862 bal_acc=0.9866 FA=0.0020 AUC=0.9941 fit=4s size=2.7MB
+
+[start] xgb seed 43 at 16:54:05
+[xgb] TEST macro_f1=0.9858 bal_acc=0.9877 FA=0.0024 AUC=0.9953 fit=1s size=2.1MB
+
+[start] dt seed 44 at 16:54:06
+[dt] TEST macro_f1=0.9752 bal_acc=0.9725 FA=0.0031 AUC=0.9725 fit=1s size=0.3MB
+
+[start] lgbm seed 44 at 16:54:07
+[lgbm] TEST macro_f1=0.9864 bal_acc=0.9861 FA=0.0019 AUC=0.9949 fit=4s size=2.7MB
+
+[start] xgb seed 44 at 16:54:11
+[xgb] TEST macro_f1=0.9861 bal_acc=0.9879 FA=0.0023 AUC=0.9953 fit=1s size=2.2MB
+
+[start] dt seed 45 at 16:54:11
+[dt] TEST macro_f1=0.9755 bal_acc=0.9728 FA=0.0030 AUC=0.9728 fit=1s size=0.3MB
+
+[start] lgbm seed 45 at 16:54:12
+[lgbm] TEST macro_f1=0.9866 bal_acc=0.9864 FA=0.0019 AUC=0.9947 fit=4s size=2.7MB
+
+[start] xgb seed 45 at 16:54:16
+[xgb] TEST macro_f1=0.9862 bal_acc=0.9880 FA=0.0023 AUC=0.9954 fit=1s size=2.2MB
+
+[start] dt seed 46 at 16:54:17
+[dt] TEST macro_f1=0.9757 bal_acc=0.9728 FA=0.0030 AUC=0.9728 fit=1s size=0.3MB
+
+[start] lgbm seed 46 at 16:54:17
+[lgbm] TEST macro_f1=0.9864 bal_acc=0.9861 FA=0.0019 AUC=0.9944 fit=4s size=2.7MB
+
+[start] xgb seed 46 at 16:54:21
+[xgb] TEST macro_f1=0.9858 bal_acc=0.9876 FA=0.0023 AUC=0.9952 fit=1s size=2.2MB
+=== --dataset wsn_ds --level binary --models mlp --seeds 43,44,45,46
+wsn_ds/binary: classes=2 train=233,464 test=50,029
+
+[start] mlp seed 43 at 16:54:24
+  epoch  1  loss=0.1439  val_macro_f1=0.9385  (0s)
+  epoch  2  loss=0.0768  val_macro_f1=0.9589  (0s)
+  epoch  3  loss=0.0672  val_macro_f1=0.9612  (0s)
+  epoch  4  loss=0.0635  val_macro_f1=0.9674  (0s)
+  epoch  5  loss=0.0616  val_macro_f1=0.9767  (0s)
+  epoch  6  loss=0.0592  val_macro_f1=0.9808  (0s)
+  epoch  7  loss=0.0578  val_macro_f1=0.9772  (0s)
+  epoch  8  loss=0.0569  val_macro_f1=0.9777  (0s)
+  epoch  9  loss=0.0560  val_macro_f1=0.9789  (0s)
+  epoch 10  loss=0.0550  val_macro_f1=0.9801  (0s)
+  epoch 11  loss=0.0541  val_macro_f1=0.9789  (0s)
+  epoch 12  loss=0.0536  val_macro_f1=0.9803  (0s)
+  early stop (best epoch 6, val macro-F1 0.9808)
+[mlp] TEST macro_f1=0.9801 bal_acc=0.9868 FA=0.0041 AUC=0.9943 fit=3s size=0.2MB
+
+[start] mlp seed 44 at 16:54:28
+  epoch  1  loss=0.1545  val_macro_f1=0.9216  (0s)
+  epoch  2  loss=0.0786  val_macro_f1=0.9568  (0s)
+  epoch  3  loss=0.0684  val_macro_f1=0.9685  (0s)
+  epoch  4  loss=0.0632  val_macro_f1=0.9701  (0s)
+  epoch  5  loss=0.0615  val_macro_f1=0.9715  (0s)
+  epoch  6  loss=0.0597  val_macro_f1=0.9752  (0s)
+  epoch  7  loss=0.0580  val_macro_f1=0.9780  (0s)
+  epoch  8  loss=0.0574  val_macro_f1=0.9793  (0s)
+  epoch  9  loss=0.0559  val_macro_f1=0.9772  (0s)
+  epoch 10  loss=0.0558  val_macro_f1=0.9815  (0s)
+  epoch 11  loss=0.0549  val_macro_f1=0.9810  (0s)
+  epoch 12  loss=0.0548  val_macro_f1=0.9808  (0s)
+  epoch 13  loss=0.0532  val_macro_f1=0.9801  (0s)
+  epoch 14  loss=0.0535  val_macro_f1=0.9794  (0s)
+  epoch 15  loss=0.0529  val_macro_f1=0.9821  (0s)
+  epoch 16  loss=0.0527  val_macro_f1=0.9819  (0s)
+  epoch 17  loss=0.0531  val_macro_f1=0.9822  (0s)
+  epoch 18  loss=0.0525  val_macro_f1=0.9806  (0s)
+  epoch 19  loss=0.0527  val_macro_f1=0.9821  (0s)
+  epoch 20  loss=0.0515  val_macro_f1=0.9823  (0s)
+  epoch 21  loss=0.0524  val_macro_f1=0.9789  (0s)
+  epoch 22  loss=0.0520  val_macro_f1=0.9821  (0s)
+  epoch 23  loss=0.0523  val_macro_f1=0.9823  (0s)
+  epoch 24  loss=0.0509  val_macro_f1=0.9823  (0s)
+  epoch 25  loss=0.0508  val_macro_f1=0.9805  (0s)
+  epoch 26  loss=0.0507  val_macro_f1=0.9820  (0s)
+  early stop (best epoch 20, val macro-F1 0.9823)
+[mlp] TEST macro_f1=0.9820 bal_acc=0.9880 FA=0.0037 AUC=0.9950 fit=6s size=0.2MB
+
+[start] mlp seed 45 at 16:54:34
+  epoch  1  loss=0.1457  val_macro_f1=0.9205  (0s)
+  epoch  2  loss=0.0783  val_macro_f1=0.9568  (0s)
+  epoch  3  loss=0.0699  val_macro_f1=0.9603  (0s)
+  epoch  4  loss=0.0653  val_macro_f1=0.9734  (0s)
+  epoch  5  loss=0.0619  val_macro_f1=0.9720  (0s)
+  epoch  6  loss=0.0594  val_macro_f1=0.9749  (0s)
+  epoch  7  loss=0.0578  val_macro_f1=0.9806  (0s)
+  epoch  8  loss=0.0578  val_macro_f1=0.9792  (0s)
+  epoch  9  loss=0.0570  val_macro_f1=0.9771  (0s)
+  epoch 10  loss=0.0564  val_macro_f1=0.9790  (0s)
+  epoch 11  loss=0.0542  val_macro_f1=0.9810  (0s)
+  epoch 12  loss=0.0540  val_macro_f1=0.9803  (0s)
+  epoch 13  loss=0.0536  val_macro_f1=0.9807  (0s)
+  epoch 14  loss=0.0535  val_macro_f1=0.9819  (0s)
+  epoch 15  loss=0.0530  val_macro_f1=0.9818  (0s)
+  epoch 16  loss=0.0532  val_macro_f1=0.9808  (0s)
+  epoch 17  loss=0.0524  val_macro_f1=0.9810  (0s)
+  epoch 18  loss=0.0523  val_macro_f1=0.9819  (0s)
+  epoch 19  loss=0.0523  val_macro_f1=0.9816  (0s)
+  epoch 20  loss=0.0522  val_macro_f1=0.9823  (0s)
+  epoch 21  loss=0.0523  val_macro_f1=0.9818  (0s)
+  epoch 22  loss=0.0516  val_macro_f1=0.9809  (0s)
+  epoch 23  loss=0.0523  val_macro_f1=0.9816  (0s)
+  epoch 24  loss=0.0510  val_macro_f1=0.9825  (0s)
+  epoch 25  loss=0.0507  val_macro_f1=0.9824  (0s)
+  epoch 26  loss=0.0511  val_macro_f1=0.9824  (0s)
+  epoch 27  loss=0.0516  val_macro_f1=0.9821  (0s)
+  epoch 28  loss=0.0508  val_macro_f1=0.9819  (0s)
+  epoch 29  loss=0.0503  val_macro_f1=0.9822  (0s)
+  epoch 30  loss=0.0511  val_macro_f1=0.9822  (0s)
+  early stop (best epoch 24, val macro-F1 0.9825)
+[mlp] TEST macro_f1=0.9825 bal_acc=0.9881 FA=0.0035 AUC=0.9946 fit=7s size=0.2MB
+
+[start] mlp seed 46 at 16:54:41
+  epoch  1  loss=0.1561  val_macro_f1=0.9299  (0s)
+  epoch  2  loss=0.0770  val_macro_f1=0.9664  (0s)
+  epoch  3  loss=0.0681  val_macro_f1=0.9665  (0s)
+  epoch  4  loss=0.0643  val_macro_f1=0.9718  (0s)
+  epoch  5  loss=0.0619  val_macro_f1=0.9699  (0s)
+  epoch  6  loss=0.0594  val_macro_f1=0.9771  (0s)
+  epoch  7  loss=0.0587  val_macro_f1=0.9794  (0s)
+  epoch  8  loss=0.0577  val_macro_f1=0.9806  (0s)
+  epoch  9  loss=0.0567  val_macro_f1=0.9795  (0s)
+  epoch 10  loss=0.0564  val_macro_f1=0.9799  (0s)
+  epoch 11  loss=0.0554  val_macro_f1=0.9799  (0s)
+  epoch 12  loss=0.0541  val_macro_f1=0.9806  (0s)
+  epoch 13  loss=0.0538  val_macro_f1=0.9808  (0s)
+  epoch 14  loss=0.0541  val_macro_f1=0.9799  (0s)
+  epoch 15  loss=0.0534  val_macro_f1=0.9811  (0s)
+  epoch 16  loss=0.0534  val_macro_f1=0.9806  (0s)
+  epoch 17  loss=0.0535  val_macro_f1=0.9777  (0s)
+  epoch 18  loss=0.0535  val_macro_f1=0.9815  (0s)
+  epoch 19  loss=0.0537  val_macro_f1=0.9820  (0s)
+  epoch 20  loss=0.0534  val_macro_f1=0.9819  (0s)
+  epoch 21  loss=0.0525  val_macro_f1=0.9813  (0s)
+  epoch 22  loss=0.0527  val_macro_f1=0.9814  (0s)
+  epoch 23  loss=0.0519  val_macro_f1=0.9817  (0s)
+  epoch 24  loss=0.0515  val_macro_f1=0.9819  (0s)
+  epoch 25  loss=0.0518  val_macro_f1=0.9816  (0s)
+  early stop (best epoch 19, val macro-F1 0.9820)
+[mlp] TEST macro_f1=0.9815 bal_acc=0.9877 FA=0.0038 AUC=0.9948 fit=6s size=0.2MB
+=== --dataset wsn_ds --level binary --models rf,catboost --seeds 43,44
+wsn_ds/binary: classes=2 train=233,464 test=50,029
+
+[start] rf seed 43 at 16:54:49
+[rf] TEST macro_f1=0.9852 bal_acc=0.9875 FA=0.0025 AUC=0.9938 fit=6s size=64.3MB
+
+[start] catboost seed 43 at 16:54:59
+[catboost] TEST macro_f1=0.9842 bal_acc=0.9877 FA=0.0029 AUC=0.9947 fit=8s size=7.8MB
+
+[start] rf seed 44 at 16:55:07
+[rf] TEST macro_f1=0.9850 bal_acc=0.9876 FA=0.0026 AUC=0.9932 fit=7s size=64.4MB
+
+[start] catboost seed 44 at 16:55:17
+[catboost] TEST macro_f1=0.9840 bal_acc=0.9881 FA=0.0030 AUC=0.9948 fit=9s size=7.9MB
+=== --dataset wsn_ds --level binary --models cnn1d --seeds 43,44
+wsn_ds/binary: classes=2 train=233,464 test=50,029
+
+[start] cnn1d seed 43 at 16:55:29
+  epoch  1  loss=0.0946  val_macro_f1=0.9584  (1s)
+  epoch  2  loss=0.0624  val_macro_f1=0.9774  (1s)
+  epoch  3  loss=0.0576  val_macro_f1=0.9728  (1s)
+  epoch  4  loss=0.0562  val_macro_f1=0.9796  (1s)
+  epoch  5  loss=0.0556  val_macro_f1=0.9785  (1s)
+  epoch  6  loss=0.0548  val_macro_f1=0.9820  (1s)
+  epoch  7  loss=0.0531  val_macro_f1=0.9799  (1s)
+  epoch  8  loss=0.0541  val_macro_f1=0.9810  (1s)
+  epoch  9  loss=0.0542  val_macro_f1=0.9828  (1s)
+  epoch 10  loss=0.0523  val_macro_f1=0.9831  (1s)
+  epoch 11  loss=0.0521  val_macro_f1=0.9816  (2s)
+  epoch 12  loss=0.0519  val_macro_f1=0.9832  (2s)
+  epoch 13  loss=0.0520  val_macro_f1=0.9707  (2s)
+  epoch 14  loss=0.0507  val_macro_f1=0.9779  (2s)
+  epoch 15  loss=0.0501  val_macro_f1=0.9814  (2s)
+  epoch 16  loss=0.0486  val_macro_f1=0.9816  (2s)
+  early stop (best epoch 10, val macro-F1 0.9831)
+[cnn1d] TEST macro_f1=0.9831 bal_acc=0.9883 FA=0.0034 AUC=0.9941 fit=22s size=0.6MB
+
+[start] cnn1d seed 44 at 16:55:51
+  epoch  1  loss=0.1069  val_macro_f1=0.9553  (2s)
+  epoch  2  loss=0.0634  val_macro_f1=0.9662  (1s)
+  epoch  3  loss=0.0588  val_macro_f1=0.9718  (2s)
+  epoch  4  loss=0.0567  val_macro_f1=0.9806  (2s)
+  epoch  5  loss=0.0556  val_macro_f1=0.9814  (2s)
+  epoch  6  loss=0.0544  val_macro_f1=0.9791  (2s)
+  epoch  7  loss=0.0548  val_macro_f1=0.9777  (2s)
+  epoch  8  loss=0.0547  val_macro_f1=0.9789  (2s)
+  epoch  9  loss=0.0520  val_macro_f1=0.9833  (2s)
+  epoch 10  loss=0.0509  val_macro_f1=0.9827  (2s)
+  epoch 11  loss=0.0503  val_macro_f1=0.9844  (2s)
+  epoch 12  loss=0.0508  val_macro_f1=0.9775  (2s)
+  epoch 13  loss=0.0503  val_macro_f1=0.9805  (2s)
+  epoch 14  loss=0.0508  val_macro_f1=0.9826  (2s)
+  epoch 15  loss=0.0485  val_macro_f1=0.9831  (2s)
+  epoch 16  loss=0.0486  val_macro_f1=0.9834  (2s)
+  epoch 17  loss=0.0486  val_macro_f1=0.9833  (2s)
+  early stop (best epoch 11, val macro-F1 0.9844)
+[cnn1d] TEST macro_f1=0.9840 bal_acc=0.9876 FA=0.0029 AUC=0.9946 fit=31s size=0.6MB
+=== --dataset ciciot2023 --level binary --models dt,lgbm,xgb --seeds 43,44,45,46
+ciciot2023/binary: classes=2 train=2,243,226 test=480,692
+
+[start] dt seed 43 at 16:56:26
+[dt] TEST macro_f1=0.7793 bal_acc=0.9291 FA=0.0994 AUC=0.9391 fit=7s size=1.8MB
+
+[start] lgbm seed 43 at 16:56:34
+[lgbm] TEST macro_f1=0.7545 bal_acc=0.9617 FA=0.0178 AUC=0.9885 fit=23s size=2.5MB
+
+[start] xgb seed 43 at 16:56:59
+[xgb] TEST macro_f1=0.7751 bal_acc=0.9568 FA=0.0376 AUC=0.9888 fit=19s size=4.4MB
+
+[start] dt seed 44 at 16:57:20
+[dt] TEST macro_f1=0.7791 bal_acc=0.9289 FA=0.0999 AUC=0.9388 fit=7s size=1.8MB
+
+[start] lgbm seed 44 at 16:57:27
+[lgbm] TEST macro_f1=0.7540 bal_acc=0.9617 FA=0.0176 AUC=0.9885 fit=20s size=2.5MB
+
+[start] xgb seed 44 at 16:57:49
+[xgb] TEST macro_f1=0.7754 bal_acc=0.9571 FA=0.0370 AUC=0.9889 fit=17s size=4.5MB
+
+[start] dt seed 45 at 16:58:07
+[dt] TEST macro_f1=0.7792 bal_acc=0.9291 FA=0.0995 AUC=0.9390 fit=7s size=1.8MB
+
+[start] lgbm seed 45 at 16:58:15
+[lgbm] TEST macro_f1=0.7539 bal_acc=0.9619 FA=0.0170 AUC=0.9885 fit=20s size=2.5MB
+
+[start] xgb seed 45 at 16:58:37
+[xgb] TEST macro_f1=0.7760 bal_acc=0.9570 FA=0.0374 AUC=0.9889 fit=18s size=4.5MB
+
+[start] dt seed 46 at 16:58:56
+[dt] TEST macro_f1=0.7791 bal_acc=0.9292 FA=0.0991 AUC=0.9392 fit=7s size=1.8MB
+
+[start] lgbm seed 46 at 16:59:03
+[lgbm] TEST macro_f1=0.7545 bal_acc=0.9619 FA=0.0173 AUC=0.9886 fit=20s size=2.5MB
+
+[start] xgb seed 46 at 16:59:25
+[xgb] TEST macro_f1=0.7751 bal_acc=0.9571 FA=0.0369 AUC=0.9889 fit=19s size=4.4MB
+=== --dataset ciciot2023 --level binary --models mlp --seeds 43,44,45,46
+ciciot2023/binary: classes=2 train=2,243,226 test=480,692
+
+[start] mlp seed 43 at 16:59:48
+  epoch  1  loss=0.1505  val_macro_f1=0.6986  (4s)
+  epoch  2  loss=0.1345  val_macro_f1=0.7013  (4s)
+  epoch  3  loss=0.1324  val_macro_f1=0.7031  (4s)
+  epoch  4  loss=0.1309  val_macro_f1=0.7088  (4s)
+  epoch  5  loss=0.1302  val_macro_f1=0.7036  (4s)
+  epoch  6  loss=0.1290  val_macro_f1=0.7048  (4s)
+  epoch  7  loss=0.1287  val_macro_f1=0.7026  (5s)
+  epoch  8  loss=0.1269  val_macro_f1=0.7060  (4s)
+  epoch  9  loss=0.1264  val_macro_f1=0.7087  (4s)
+  epoch 10  loss=0.1261  val_macro_f1=0.7064  (4s)
+  early stop (best epoch 4, val macro-F1 0.7088)
+[mlp] TEST macro_f1=0.7089 bal_acc=0.9553 FA=0.0074 AUC=0.9838 fit=40s size=0.2MB
+
+[start] mlp seed 44 at 17:00:29
+  epoch  1  loss=0.1501  val_macro_f1=0.6918  (4s)
+  epoch  2  loss=0.1342  val_macro_f1=0.6995  (6s)
+  epoch  3  loss=0.1322  val_macro_f1=0.7009  (4s)
+  epoch  4  loss=0.1309  val_macro_f1=0.6982  (5s)
+  epoch  5  loss=0.1301  val_macro_f1=0.7029  (5s)
+  epoch  6  loss=0.1294  val_macro_f1=0.7051  (4s)
+  epoch  7  loss=0.1288  val_macro_f1=0.7105  (5s)
+  epoch  8  loss=0.1281  val_macro_f1=0.7105  (4s)
+  epoch  9  loss=0.1278  val_macro_f1=0.7042  (4s)
+  epoch 10  loss=0.1275  val_macro_f1=0.7080  (4s)
+  epoch 11  loss=0.1259  val_macro_f1=0.7119  (4s)
+  epoch 12  loss=0.1256  val_macro_f1=0.7084  (5s)
+  epoch 13  loss=0.1251  val_macro_f1=0.7121  (5s)
+  epoch 14  loss=0.1249  val_macro_f1=0.7124  (5s)
+  epoch 15  loss=0.1247  val_macro_f1=0.7097  (5s)
+  epoch 16  loss=0.1246  val_macro_f1=0.7126  (5s)
+  epoch 17  loss=0.1245  val_macro_f1=0.7091  (5s)
+  epoch 18  loss=0.1241  val_macro_f1=0.7116  (5s)
+  epoch 19  loss=0.1239  val_macro_f1=0.7120  (5s)
+  epoch 20  loss=0.1232  val_macro_f1=0.7135  (5s)
+  epoch 21  loss=0.1229  val_macro_f1=0.7135  (5s)
+  epoch 22  loss=0.1226  val_macro_f1=0.7119  (5s)
+  epoch 23  loss=0.1227  val_macro_f1=0.7136  (5s)
+  epoch 24  loss=0.1225  val_macro_f1=0.7167  (5s)
+  epoch 25  loss=0.1226  val_macro_f1=0.7145  (5s)
+  epoch 26  loss=0.1223  val_macro_f1=0.7134  (5s)
+  epoch 27  loss=0.1226  val_macro_f1=0.7127  (5s)
+  epoch 28  loss=0.1218  val_macro_f1=0.7135  (5s)
+  epoch 29  loss=0.1217  val_macro_f1=0.7124  (6s)
+  epoch 30  loss=0.1217  val_macro_f1=0.7163  (5s)
+  early stop (best epoch 24, val macro-F1 0.7167)
+[mlp] TEST macro_f1=0.7171 bal_acc=0.9573 FA=0.0079 AUC=0.9850 fit=144s size=0.2MB
+
+[start] mlp seed 45 at 17:02:54
+  epoch  1  loss=0.1496  val_macro_f1=0.6945  (4s)
+  epoch  2  loss=0.1344  val_macro_f1=0.6979  (4s)
+  epoch  3  loss=0.1321  val_macro_f1=0.6983  (4s)
+  epoch  4  loss=0.1308  val_macro_f1=0.7000  (5s)
+  epoch  5  loss=0.1300  val_macro_f1=0.7057  (5s)
+  epoch  6  loss=0.1292  val_macro_f1=0.7019  (5s)
+  epoch  7  loss=0.1285  val_macro_f1=0.7063  (5s)
+  epoch  8  loss=0.1282  val_macro_f1=0.7055  (5s)
+  epoch  9  loss=0.1278  val_macro_f1=0.7044  (5s)
+  epoch 10  loss=0.1272  val_macro_f1=0.7019  (4s)
+  epoch 11  loss=0.1258  val_macro_f1=0.7100  (5s)
+  epoch 12  loss=0.1255  val_macro_f1=0.7163  (5s)
+  epoch 13  loss=0.1252  val_macro_f1=0.7112  (5s)
+  epoch 14  loss=0.1249  val_macro_f1=0.7037  (5s)
+  epoch 15  loss=0.1247  val_macro_f1=0.7135  (5s)
+  epoch 16  loss=0.1238  val_macro_f1=0.7136  (5s)
+  epoch 17  loss=0.1236  val_macro_f1=0.7086  (5s)
+  epoch 18  loss=0.1233  val_macro_f1=0.7175  (5s)
+  epoch 19  loss=0.1232  val_macro_f1=0.7137  (5s)
+  epoch 20  loss=0.1230  val_macro_f1=0.7106  (5s)
+  epoch 21  loss=0.1232  val_macro_f1=0.7130  (5s)
+  epoch 22  loss=0.1226  val_macro_f1=0.7128  (5s)
+  epoch 23  loss=0.1222  val_macro_f1=0.7141  (5s)
+  epoch 24  loss=0.1223  val_macro_f1=0.7161  (5s)
+  early stop (best epoch 18, val macro-F1 0.7175)
+[mlp] TEST macro_f1=0.7179 bal_acc=0.9573 FA=0.0083 AUC=0.9850 fit=115s size=0.2MB
+
+[start] mlp seed 46 at 17:04:50
+  epoch  1  loss=0.1493  val_macro_f1=0.6922  (4s)
+  epoch  2  loss=0.1346  val_macro_f1=0.6992  (5s)
+  epoch  3  loss=0.1325  val_macro_f1=0.7095  (5s)
+  epoch  4  loss=0.1313  val_macro_f1=0.7050  (5s)
+  epoch  5  loss=0.1303  val_macro_f1=0.7024  (5s)
+  epoch  6  loss=0.1294  val_macro_f1=0.6977  (5s)
+  epoch  7  loss=0.1276  val_macro_f1=0.7045  (5s)
+  epoch  8  loss=0.1273  val_macro_f1=0.7083  (5s)
+  epoch  9  loss=0.1270  val_macro_f1=0.7073  (5s)
+  early stop (best epoch 3, val macro-F1 0.7095)
+[mlp] TEST macro_f1=0.7096 bal_acc=0.9546 FA=0.0093 AUC=0.9836 fit=43s size=0.2MB
+=== --dataset ciciot2023 --level binary --models rf,catboost --seeds 43,44
+ciciot2023/binary: classes=2 train=2,243,226 test=480,692
+
+[start] rf seed 43 at 17:05:36
+[rf] TEST macro_f1=0.7950 bal_acc=0.9410 FA=0.0793 AUC=0.9874 fit=442s size=383.9MB
+
+[start] catboost seed 43 at 17:13:03
+[catboost] TEST macro_f1=0.7775 bal_acc=0.9556 FA=0.0410 AUC=0.9885 fit=202s size=6.7MB
+
+[start] rf seed 44 at 17:16:26
+[rf] TEST macro_f1=0.7946 bal_acc=0.9408 FA=0.0795 AUC=0.9873 fit=356s size=382.8MB
+
+[start] catboost seed 44 at 17:22:26
+[catboost] TEST macro_f1=0.7778 bal_acc=0.9543 FA=0.0440 AUC=0.9885 fit=183s size=6.7MB
+=== --dataset ciciot2023 --level binary --models cnn1d --seeds 43,44
+ciciot2023/binary: classes=2 train=2,243,226 test=480,692
+
+[start] cnn1d seed 43 at 17:25:34
+  epoch  1  loss=0.1376  val_macro_f1=0.7085  (30s)
+  epoch  2  loss=0.1304  val_macro_f1=0.7046  (30s)
+  epoch  3  loss=0.1284  val_macro_f1=0.7114  (29s)
+  epoch  4  loss=0.1268  val_macro_f1=0.7092  (30s)
+  epoch  5  loss=0.1255  val_macro_f1=0.7156  (29s)
+  epoch  6  loss=0.1248  val_macro_f1=0.7120  (29s)
+  epoch  7  loss=0.1235  val_macro_f1=0.7184  (28s)
+  epoch  8  loss=0.1225  val_macro_f1=0.7181  (27s)
+  epoch  9  loss=0.1216  val_macro_f1=0.7161  (32s)
+  epoch 10  loss=0.1211  val_macro_f1=0.7177  (33s)
+  epoch 11  loss=0.1180  val_macro_f1=0.7185  (24s)
+  epoch 12  loss=0.1178  val_macro_f1=0.7238  (24s)
+  epoch 13  loss=0.1167  val_macro_f1=0.7221  (24s)
+  epoch 14  loss=0.1163  val_macro_f1=0.7244  (24s)
+  epoch 15  loss=0.1159  val_macro_f1=0.7208  (24s)
+  epoch 16  loss=0.1157  val_macro_f1=0.7257  (24s)
+  epoch 17  loss=0.1154  val_macro_f1=0.7261  (24s)
+  epoch 18  loss=0.1148  val_macro_f1=0.7258  (24s)
+  epoch 19  loss=0.1147  val_macro_f1=0.7266  (24s)
+  epoch 20  loss=0.1143  val_macro_f1=0.7260  (24s)
+  epoch 21  loss=0.1140  val_macro_f1=0.7250  (24s)
+  epoch 22  loss=0.1138  val_macro_f1=0.7310  (24s)
+  epoch 23  loss=0.1136  val_macro_f1=0.7231  (24s)
+  epoch 24  loss=0.1130  val_macro_f1=0.7296  (24s)
+  epoch 25  loss=0.1130  val_macro_f1=0.7291  (26s)
+  epoch 26  loss=0.1112  val_macro_f1=0.7335  (28s)
+  epoch 27  loss=0.1108  val_macro_f1=0.7313  (23s)
+  epoch 28  loss=0.1106  val_macro_f1=0.7291  (23s)
+  epoch 29  loss=0.1105  val_macro_f1=0.7339  (23s)
+  epoch 30  loss=0.1102  val_macro_f1=0.7334  (24s)
+  epoch 31  loss=0.1099  val_macro_f1=0.7344  (24s)
+  epoch 32  loss=0.1096  val_macro_f1=0.7345  (23s)
+  epoch 33  loss=0.1096  val_macro_f1=0.7359  (23s)
+  epoch 34  loss=0.1094  val_macro_f1=0.7331  (25s)
+  epoch 35  loss=0.1091  val_macro_f1=0.7340  (25s)
+  epoch 36  loss=0.1089  val_macro_f1=0.7317  (26s)
+  epoch 37  loss=0.1081  val_macro_f1=0.7364  (24s)
+  epoch 38  loss=0.1078  val_macro_f1=0.7348  (23s)
+  epoch 39  loss=0.1074  val_macro_f1=0.7359  (23s)
+  epoch 40  loss=0.1074  val_macro_f1=0.7356  (23s)
+[cnn1d] TEST macro_f1=0.7364 bal_acc=0.9581 FA=0.0168 AUC=0.9864 fit=1020s size=1.1MB
+
+[start] cnn1d seed 44 at 17:42:37
+  epoch  1  loss=0.1381  val_macro_f1=0.7009  (23s)
+  epoch  2  loss=0.1308  val_macro_f1=0.7067  (24s)
+  epoch  3  loss=0.1284  val_macro_f1=0.7086  (24s)
+  epoch  4  loss=0.1272  val_macro_f1=0.7075  (24s)
+  epoch  5  loss=0.1260  val_macro_f1=0.7110  (24s)
+  epoch  6  loss=0.1248  val_macro_f1=0.7165  (24s)
+  epoch  7  loss=0.1238  val_macro_f1=0.7186  (24s)
+  epoch  8  loss=0.1225  val_macro_f1=0.7211  (25s)
+  epoch  9  loss=0.1212  val_macro_f1=0.7163  (25s)
+  epoch 10  loss=0.1205  val_macro_f1=0.7174  (25s)
+  epoch 11  loss=0.1198  val_macro_f1=0.7238  (25s)
+  epoch 12  loss=0.1193  val_macro_f1=0.7178  (25s)
+  epoch 13  loss=0.1185  val_macro_f1=0.7164  (25s)
+  epoch 14  loss=0.1179  val_macro_f1=0.7260  (25s)
+  epoch 15  loss=0.1176  val_macro_f1=0.7210  (25s)
+  epoch 16  loss=0.1170  val_macro_f1=0.7233  (25s)
+  epoch 17  loss=0.1169  val_macro_f1=0.7235  (25s)
+  epoch 18  loss=0.1144  val_macro_f1=0.7283  (25s)
+  epoch 19  loss=0.1137  val_macro_f1=0.7264  (24s)
+  epoch 20  loss=0.1136  val_macro_f1=0.7307  (26s)
+  epoch 21  loss=0.1131  val_macro_f1=0.7259  (25s)
+  epoch 22  loss=0.1127  val_macro_f1=0.7266  (25s)
+  epoch 23  loss=0.1123  val_macro_f1=0.7315  (25s)
+  epoch 24  loss=0.1120  val_macro_f1=0.7277  (24s)
+  epoch 25  loss=0.1119  val_macro_f1=0.7281  (25s)
+  epoch 26  loss=0.1116  val_macro_f1=0.7292  (25s)
+  epoch 27  loss=0.1101  val_macro_f1=0.7314  (25s)
+  epoch 28  loss=0.1097  val_macro_f1=0.7312  (25s)
+  epoch 29  loss=0.1094  val_macro_f1=0.7350  (25s)
+  epoch 30  loss=0.1092  val_macro_f1=0.7355  (25s)
+  epoch 31  loss=0.1090  val_macro_f1=0.7340  (25s)
+  epoch 32  loss=0.1088  val_macro_f1=0.7326  (25s)
+  epoch 33  loss=0.1086  val_macro_f1=0.7355  (25s)
+  epoch 34  loss=0.1076  val_macro_f1=0.7354  (25s)
+  epoch 35  loss=0.1076  val_macro_f1=0.7344  (26s)
+  epoch 36  loss=0.1073  val_macro_f1=0.7372  (25s)
+  epoch 37  loss=0.1070  val_macro_f1=0.7354  (25s)
+  epoch 38  loss=0.1070  val_macro_f1=0.7359  (25s)
+  epoch 39  loss=0.1068  val_macro_f1=0.7373  (25s)
+  epoch 40  loss=0.1068  val_macro_f1=0.7351  (25s)
+[cnn1d] TEST macro_f1=0.7372 bal_acc=0.9581 FA=0.0173 AUC=0.9863 fit=985s size=1.1MB
+=== --dataset wsn_ds --level category --models dt,lgbm,xgb --seeds 43,44,45,46
+wsn_ds/category: classes=5 train=233,464 test=50,029
+
+[start] dt seed 43 at 17:59:08
+[dt] TEST macro_f1=0.9513 bal_acc=0.9456 FA=0.0027 AUC=0.9680 fit=1s size=0.4MB
+
+[start] lgbm seed 43 at 17:59:09
+[lgbm] TEST macro_f1=0.9679 bal_acc=0.9711 FA=0.0020 AUC=0.9949 fit=15s size=8.0MB
+
+[start] xgb seed 43 at 17:59:26
+[xgb] TEST macro_f1=0.9669 bal_acc=0.9758 FA=0.0027 AUC=0.9958 fit=4s size=7.1MB
+
+[start] dt seed 44 at 17:59:31
+[dt] TEST macro_f1=0.9511 bal_acc=0.9445 FA=0.0027 AUC=0.9673 fit=1s size=0.4MB
+
+[start] lgbm seed 44 at 17:59:32
+[lgbm] TEST macro_f1=0.9680 bal_acc=0.9706 FA=0.0019 AUC=0.9943 fit=15s size=8.0MB
+
+[start] xgb seed 44 at 17:59:49
+[xgb] TEST macro_f1=0.9660 bal_acc=0.9743 FA=0.0026 AUC=0.9958 fit=5s size=7.2MB
+
+[start] dt seed 45 at 17:59:54
+[dt] TEST macro_f1=0.9522 bal_acc=0.9451 FA=0.0025 AUC=0.9676 fit=1s size=0.4MB
+
+[start] lgbm seed 45 at 17:59:56
+[lgbm] TEST macro_f1=0.9688 bal_acc=0.9713 FA=0.0019 AUC=0.9943 fit=16s size=8.0MB
+
+[start] xgb seed 45 at 18:00:13
+[xgb] TEST macro_f1=0.9666 bal_acc=0.9757 FA=0.0027 AUC=0.9958 fit=5s size=7.0MB
+
+[start] dt seed 46 at 18:00:18
+[dt] TEST macro_f1=0.9510 bal_acc=0.9461 FA=0.0028 AUC=0.9683 fit=1s size=0.4MB
+
+[start] lgbm seed 46 at 18:00:19
+[lgbm] TEST macro_f1=0.9676 bal_acc=0.9702 FA=0.0020 AUC=0.9947 fit=16s size=8.0MB
+
+[start] xgb seed 46 at 18:00:37
+[xgb] TEST macro_f1=0.9668 bal_acc=0.9749 FA=0.0026 AUC=0.9957 fit=5s size=7.1MB
+=== --dataset wsn_ds --level category --models mlp --seeds 43,44,45,46
+wsn_ds/category: classes=5 train=233,464 test=50,029
+
+[start] mlp seed 43 at 18:00:44
+  epoch  1  loss=0.4115  val_macro_f1=0.8825  (0s)
+  epoch  2  loss=0.1851  val_macro_f1=0.8865  (0s)
+  epoch  3  loss=0.1517  val_macro_f1=0.9026  (0s)
+  epoch  4  loss=0.1426  val_macro_f1=0.9088  (0s)
+  epoch  5  loss=0.1341  val_macro_f1=0.9154  (0s)
+  epoch  6  loss=0.1275  val_macro_f1=0.9146  (0s)
+  epoch  7  loss=0.1251  val_macro_f1=0.9189  (0s)
+  epoch  8  loss=0.1215  val_macro_f1=0.9207  (0s)
+  epoch  9  loss=0.1212  val_macro_f1=0.9178  (0s)
+  epoch 10  loss=0.1200  val_macro_f1=0.9218  (0s)
+  epoch 11  loss=0.1169  val_macro_f1=0.9309  (0s)
+  epoch 12  loss=0.1150  val_macro_f1=0.9276  (0s)
+  epoch 13  loss=0.1140  val_macro_f1=0.9358  (0s)
+  epoch 14  loss=0.1136  val_macro_f1=0.9338  (0s)
+  epoch 15  loss=0.1135  val_macro_f1=0.9291  (0s)
+  epoch 16  loss=0.1113  val_macro_f1=0.9361  (0s)
+  epoch 17  loss=0.1102  val_macro_f1=0.9335  (0s)
+  epoch 18  loss=0.1082  val_macro_f1=0.9353  (0s)
+  epoch 19  loss=0.1074  val_macro_f1=0.9358  (0s)
+  epoch 20  loss=0.1072  val_macro_f1=0.9395  (0s)
+  epoch 21  loss=0.1042  val_macro_f1=0.9381  (0s)
+  epoch 22  loss=0.1049  val_macro_f1=0.9350  (0s)
+  epoch 23  loss=0.1043  val_macro_f1=0.9379  (0s)
+  epoch 24  loss=0.1037  val_macro_f1=0.9382  (0s)
+  epoch 25  loss=0.1027  val_macro_f1=0.9362  (0s)
+  epoch 26  loss=0.1032  val_macro_f1=0.9429  (0s)
+  epoch 27  loss=0.1030  val_macro_f1=0.9388  (0s)
+  epoch 28  loss=0.1012  val_macro_f1=0.9392  (0s)
+  epoch 29  loss=0.1035  val_macro_f1=0.9424  (0s)
+  epoch 30  loss=0.1022  val_macro_f1=0.9404  (0s)
+  epoch 31  loss=0.1017  val_macro_f1=0.9443  (0s)
+  epoch 32  loss=0.1022  val_macro_f1=0.9391  (0s)
+  epoch 33  loss=0.1015  val_macro_f1=0.9402  (0s)
+  epoch 34  loss=0.1024  val_macro_f1=0.9384  (0s)
+  epoch 35  loss=0.1010  val_macro_f1=0.9405  (0s)
+  epoch 36  loss=0.1019  val_macro_f1=0.9399  (0s)
+  epoch 37  loss=0.1014  val_macro_f1=0.9398  (0s)
+  early stop (best epoch 31, val macro-F1 0.9443)
+[mlp] TEST macro_f1=0.9451 bal_acc=0.9654 FA=0.0051 AUC=0.9948 fit=13s size=0.2MB
+
+[start] mlp seed 44 at 18:00:58
+  epoch  1  loss=0.4026  val_macro_f1=0.8805  (0s)
+  epoch  2  loss=0.1849  val_macro_f1=0.8780  (0s)
+  epoch  3  loss=0.1555  val_macro_f1=0.9095  (0s)
+  epoch  4  loss=0.1405  val_macro_f1=0.9082  (0s)
+  epoch  5  loss=0.1361  val_macro_f1=0.9099  (0s)
+  epoch  6  loss=0.1297  val_macro_f1=0.9205  (0s)
+  epoch  7  loss=0.1244  val_macro_f1=0.9198  (0s)
+  epoch  8  loss=0.1220  val_macro_f1=0.9236  (0s)
+  epoch  9  loss=0.1204  val_macro_f1=0.9326  (0s)
+  epoch 10  loss=0.1165  val_macro_f1=0.9268  (0s)
+  epoch 11  loss=0.1159  val_macro_f1=0.9331  (0s)
+  epoch 12  loss=0.1148  val_macro_f1=0.9272  (0s)
+  epoch 13  loss=0.1112  val_macro_f1=0.9350  (0s)
+  epoch 14  loss=0.1114  val_macro_f1=0.9339  (0s)
+  epoch 15  loss=0.1116  val_macro_f1=0.9319  (0s)
+  epoch 16  loss=0.1101  val_macro_f1=0.9349  (0s)
+  epoch 17  loss=0.1097  val_macro_f1=0.9400  (0s)
+  epoch 18  loss=0.1073  val_macro_f1=0.9352  (0s)
+  epoch 19  loss=0.1062  val_macro_f1=0.9347  (0s)
+  epoch 20  loss=0.1063  val_macro_f1=0.9354  (0s)
+  epoch 21  loss=0.1060  val_macro_f1=0.9366  (0s)
+  epoch 22  loss=0.1042  val_macro_f1=0.9395  (0s)
+  epoch 23  loss=0.1054  val_macro_f1=0.9406  (0s)
+  epoch 24  loss=0.1033  val_macro_f1=0.9390  (0s)
+  epoch 25  loss=0.1052  val_macro_f1=0.9388  (0s)
+  epoch 26  loss=0.1039  val_macro_f1=0.9388  (0s)
+  epoch 27  loss=0.1038  val_macro_f1=0.9427  (0s)
+  epoch 28  loss=0.1038  val_macro_f1=0.9415  (0s)
+  epoch 29  loss=0.1034  val_macro_f1=0.9377  (0s)
+  epoch 30  loss=0.1028  val_macro_f1=0.9380  (0s)
+  epoch 31  loss=0.1032  val_macro_f1=0.9404  (0s)
+  epoch 32  loss=0.1027  val_macro_f1=0.9411  (0s)
+  epoch 33  loss=0.1021  val_macro_f1=0.9416  (0s)
+  early stop (best epoch 27, val macro-F1 0.9427)
+[mlp] TEST macro_f1=0.9429 bal_acc=0.9634 FA=0.0045 AUC=0.9950 fit=11s size=0.2MB
+
+[start] mlp seed 45 at 18:01:10
+  epoch  1  loss=0.4001  val_macro_f1=0.8801  (0s)
+  epoch  2  loss=0.1814  val_macro_f1=0.8887  (0s)
+  epoch  3  loss=0.1520  val_macro_f1=0.8940  (0s)
+  epoch  4  loss=0.1403  val_macro_f1=0.9127  (0s)
+  epoch  5  loss=0.1355  val_macro_f1=0.9133  (0s)
+  epoch  6  loss=0.1271  val_macro_f1=0.9177  (0s)
+  epoch  7  loss=0.1250  val_macro_f1=0.9131  (0s)
+  epoch  8  loss=0.1214  val_macro_f1=0.9199  (0s)
+  epoch  9  loss=0.1203  val_macro_f1=0.9235  (0s)
+  epoch 10  loss=0.1171  val_macro_f1=0.9247  (0s)
+  epoch 11  loss=0.1162  val_macro_f1=0.9320  (0s)
+  epoch 12  loss=0.1145  val_macro_f1=0.9229  (0s)
+  epoch 13  loss=0.1143  val_macro_f1=0.9282  (0s)
+  epoch 14  loss=0.1111  val_macro_f1=0.9353  (0s)
+  epoch 15  loss=0.1109  val_macro_f1=0.9353  (0s)
+  epoch 16  loss=0.1109  val_macro_f1=0.9332  (0s)
+  epoch 17  loss=0.1077  val_macro_f1=0.9363  (0s)
+  epoch 18  loss=0.1085  val_macro_f1=0.9205  (0s)
+  epoch 19  loss=0.1107  val_macro_f1=0.9346  (0s)
+  epoch 20  loss=0.1071  val_macro_f1=0.9352  (0s)
+  epoch 21  loss=0.1053  val_macro_f1=0.9358  (0s)
+  epoch 22  loss=0.1038  val_macro_f1=0.9387  (0s)
+  epoch 23  loss=0.1048  val_macro_f1=0.9372  (0s)
+  epoch 24  loss=0.1043  val_macro_f1=0.9378  (0s)
+  epoch 25  loss=0.1037  val_macro_f1=0.9397  (0s)
+  epoch 26  loss=0.1036  val_macro_f1=0.9382  (0s)
+  epoch 27  loss=0.1044  val_macro_f1=0.9376  (0s)
+  epoch 28  loss=0.1041  val_macro_f1=0.9372  (0s)
+  epoch 29  loss=0.1021  val_macro_f1=0.9414  (0s)
+  epoch 30  loss=0.1011  val_macro_f1=0.9404  (0s)
+  epoch 31  loss=0.1023  val_macro_f1=0.9373  (0s)
+  epoch 32  loss=0.1012  val_macro_f1=0.9383  (0s)
+  epoch 33  loss=0.1024  val_macro_f1=0.9396  (0s)
+  epoch 34  loss=0.1004  val_macro_f1=0.9395  (0s)
+  epoch 35  loss=0.1010  val_macro_f1=0.9405  (0s)
+  early stop (best epoch 29, val macro-F1 0.9414)
+[mlp] TEST macro_f1=0.9428 bal_acc=0.9636 FA=0.0046 AUC=0.9947 fit=12s size=0.2MB
+
+[start] mlp seed 46 at 18:01:23
+  epoch  1  loss=0.4446  val_macro_f1=0.8833  (0s)
+  epoch  2  loss=0.1920  val_macro_f1=0.8826  (0s)
+  epoch  3  loss=0.1593  val_macro_f1=0.8990  (0s)
+  epoch  4  loss=0.1417  val_macro_f1=0.9074  (0s)
+  epoch  5  loss=0.1350  val_macro_f1=0.9167  (0s)
+  epoch  6  loss=0.1294  val_macro_f1=0.9134  (0s)
+  epoch  7  loss=0.1249  val_macro_f1=0.9191  (0s)
+  epoch  8  loss=0.1226  val_macro_f1=0.9116  (0s)
+  epoch  9  loss=0.1180  val_macro_f1=0.9238  (0s)
+  epoch 10  loss=0.1202  val_macro_f1=0.9236  (0s)
+  epoch 11  loss=0.1181  val_macro_f1=0.9270  (0s)
+  epoch 12  loss=0.1156  val_macro_f1=0.9347  (0s)
+  epoch 13  loss=0.1148  val_macro_f1=0.9342  (0s)
+  epoch 14  loss=0.1132  val_macro_f1=0.9341  (0s)
+  epoch 15  loss=0.1124  val_macro_f1=0.9346  (0s)
+  epoch 16  loss=0.1087  val_macro_f1=0.9367  (0s)
+  epoch 17  loss=0.1075  val_macro_f1=0.9346  (0s)
+  epoch 18  loss=0.1075  val_macro_f1=0.9370  (0s)
+  epoch 19  loss=0.1093  val_macro_f1=0.9383  (0s)
+  epoch 20  loss=0.1082  val_macro_f1=0.9369  (0s)
+  epoch 21  loss=0.1060  val_macro_f1=0.9354  (0s)
+  epoch 22  loss=0.1058  val_macro_f1=0.9389  (0s)
+  epoch 23  loss=0.1070  val_macro_f1=0.9361  (0s)
+  epoch 24  loss=0.1067  val_macro_f1=0.9393  (0s)
+  epoch 25  loss=0.1064  val_macro_f1=0.9373  (0s)
+  epoch 26  loss=0.1056  val_macro_f1=0.9410  (0s)
+  epoch 27  loss=0.1050  val_macro_f1=0.9365  (0s)
+  epoch 28  loss=0.1062  val_macro_f1=0.9383  (0s)
+  epoch 29  loss=0.1048  val_macro_f1=0.9400  (0s)
+  epoch 30  loss=0.1021  val_macro_f1=0.9391  (0s)
+  epoch 31  loss=0.1037  val_macro_f1=0.9405  (0s)
+  epoch 32  loss=0.1033  val_macro_f1=0.9411  (0s)
+  early stop (best epoch 26, val macro-F1 0.9410)
+[mlp] TEST macro_f1=0.9411 bal_acc=0.9636 FA=0.0049 AUC=0.9947 fit=11s size=0.2MB
+=== --dataset wsn_ds --level category --models rf,catboost --seeds 43,44
+wsn_ds/category: classes=5 train=233,464 test=50,029
+
+[start] rf seed 43 at 18:01:37
+[rf] TEST macro_f1=0.9614 bal_acc=0.9723 FA=0.0034 AUC=0.9924 fit=9s size=77.7MB
+
+[start] catboost seed 43 at 18:01:50
+[catboost] TEST macro_f1=0.9553 bal_acc=0.9762 FA=0.0054 AUC=0.9952 fit=55s size=23.4MB
+
+[start] rf seed 44 at 18:02:46
+[rf] TEST macro_f1=0.9619 bal_acc=0.9723 FA=0.0033 AUC=0.9919 fit=8s size=77.6MB
+
+[start] catboost seed 44 at 18:02:58
+[catboost] TEST macro_f1=0.9555 bal_acc=0.9763 FA=0.0053 AUC=0.9955 fit=53s size=23.5MB
+=== --dataset wsn_ds --level category --models cnn1d --seeds 43,44
+wsn_ds/category: classes=5 train=233,464 test=50,029
+
+[start] cnn1d seed 43 at 18:03:54
+  epoch  1  loss=0.2076  val_macro_f1=0.9197  (1s)
+  epoch  2  loss=0.1265  val_macro_f1=0.9104  (2s)
+  epoch  3  loss=0.1198  val_macro_f1=0.9289  (1s)
+  epoch  4  loss=0.1136  val_macro_f1=0.9346  (2s)
+  epoch  5  loss=0.1087  val_macro_f1=0.9326  (1s)
+  epoch  6  loss=0.1085  val_macro_f1=0.9239  (2s)
+  epoch  7  loss=0.1055  val_macro_f1=0.9353  (1s)
+  epoch  8  loss=0.1074  val_macro_f1=0.8986  (2s)
+  epoch  9  loss=0.1054  val_macro_f1=0.9386  (2s)
+  epoch 10  loss=0.1031  val_macro_f1=0.9402  (2s)
+  epoch 11  loss=0.1031  val_macro_f1=0.9425  (1s)
+  epoch 12  loss=0.1020  val_macro_f1=0.9394  (1s)
+  epoch 13  loss=0.1014  val_macro_f1=0.9437  (2s)
+  epoch 14  loss=0.1007  val_macro_f1=0.9392  (1s)
+  epoch 15  loss=0.1021  val_macro_f1=0.9421  (1s)
+  epoch 16  loss=0.0993  val_macro_f1=0.9361  (2s)
+  epoch 17  loss=0.0956  val_macro_f1=0.9399  (2s)
+  epoch 18  loss=0.0964  val_macro_f1=0.9403  (1s)
+  epoch 19  loss=0.0941  val_macro_f1=0.9405  (1s)
+  early stop (best epoch 13, val macro-F1 0.9437)
+[cnn1d] TEST macro_f1=0.9430 bal_acc=0.9643 FA=0.0048 AUC=0.9952 fit=29s size=0.6MB
+
+[start] cnn1d seed 44 at 18:04:25
+  epoch  1  loss=0.2150  val_macro_f1=0.8849  (2s)
+  epoch  2  loss=0.1299  val_macro_f1=0.9285  (1s)
+  epoch  3  loss=0.1171  val_macro_f1=0.9136  (2s)
+  epoch  4  loss=0.1123  val_macro_f1=0.9330  (2s)
+  epoch  5  loss=0.1108  val_macro_f1=0.9189  (1s)
+  epoch  6  loss=0.1095  val_macro_f1=0.9401  (2s)
+  epoch  7  loss=0.1069  val_macro_f1=0.9083  (2s)
+  epoch  8  loss=0.1080  val_macro_f1=0.9344  (1s)
+  epoch  9  loss=0.1057  val_macro_f1=0.9416  (2s)
+  epoch 10  loss=0.1057  val_macro_f1=0.9372  (2s)
+  epoch 11  loss=0.1021  val_macro_f1=0.9411  (1s)
+  epoch 12  loss=0.1008  val_macro_f1=0.9325  (1s)
+  epoch 13  loss=0.0980  val_macro_f1=0.9489  (2s)
+  epoch 14  loss=0.0979  val_macro_f1=0.9413  (1s)
+  epoch 15  loss=0.0962  val_macro_f1=0.9457  (1s)
+  epoch 16  loss=0.0963  val_macro_f1=0.9426  (1s)
+  epoch 17  loss=0.0942  val_macro_f1=0.9462  (1s)
+  epoch 18  loss=0.0919  val_macro_f1=0.9462  (1s)
+  epoch 19  loss=0.0924  val_macro_f1=0.9444  (1s)
+  early stop (best epoch 13, val macro-F1 0.9489)
+[cnn1d] TEST macro_f1=0.9490 bal_acc=0.9638 FA=0.0038 AUC=0.9953 fit=28s size=0.6MB
+=== --dataset ciciot2023 --level category --models dt,lgbm,xgb --seeds 43,44,45,46
+ciciot2023/category: classes=8 train=2,243,226 test=480,692
+
+[start] dt seed 43 at 18:04:59
+[dt] TEST macro_f1=0.6578 bal_acc=0.7030 FA=0.3106 AUC=0.8786 fit=20s size=20.8MB
+
+[start] lgbm seed 43 at 18:05:24
+[lgbm] TEST macro_f1=0.6778 bal_acc=0.7743 FA=0.2082 AUC=0.9795 fit=144s size=19.8MB
+
+[start] xgb seed 43 at 18:08:08
+[xgb] TEST macro_f1=0.6978 bal_acc=0.7672 FA=0.1863 AUC=0.9794 fit=124s size=33.0MB
+
+[start] dt seed 44 at 18:10:22
+[dt] TEST macro_f1=0.6579 bal_acc=0.7028 FA=0.3111 AUC=0.8785 fit=20s size=20.8MB
+
+[start] lgbm seed 44 at 18:10:47
+[lgbm] TEST macro_f1=0.6794 bal_acc=0.7756 FA=0.2017 AUC=0.9795 fit=145s size=19.8MB
+
+[start] xgb seed 44 at 18:13:33
+[xgb] TEST macro_f1=0.6972 bal_acc=0.7674 FA=0.1845 AUC=0.9794 fit=124s size=32.4MB
+
+[start] dt seed 45 at 18:15:46
+[dt] TEST macro_f1=0.6580 bal_acc=0.7031 FA=0.3090 AUC=0.8786 fit=20s size=20.8MB
+
+[start] lgbm seed 45 at 18:16:11
+[lgbm] TEST macro_f1=0.6799 bal_acc=0.7752 FA=0.1993 AUC=0.9796 fit=144s size=19.8MB
+
+[start] xgb seed 45 at 18:18:56
+[xgb] TEST macro_f1=0.6970 bal_acc=0.7672 FA=0.1843 AUC=0.9794 fit=126s size=32.3MB
+
+[start] dt seed 46 at 18:21:11
+[dt] TEST macro_f1=0.6578 bal_acc=0.7029 FA=0.3099 AUC=0.8785 fit=20s size=20.8MB
+
+[start] lgbm seed 46 at 18:21:36
+[lgbm] TEST macro_f1=0.6779 bal_acc=0.7735 FA=0.2043 AUC=0.9795 fit=146s size=19.8MB
+
+[start] xgb seed 46 at 18:24:22
+[xgb] TEST macro_f1=0.6977 bal_acc=0.7687 FA=0.1868 AUC=0.9794 fit=125s size=32.7MB
+=== --dataset ciciot2023 --level category --models mlp --seeds 43,44,45,46
+ciciot2023/category: classes=8 train=2,243,226 test=480,692
+
+[start] mlp seed 43 at 18:26:42
+  epoch  1  loss=0.8755  val_macro_f1=0.5705  (3s)
+  epoch  2  loss=0.7849  val_macro_f1=0.5918  (3s)
+  epoch  3  loss=0.7680  val_macro_f1=0.5938  (3s)
+  epoch  4  loss=0.7583  val_macro_f1=0.5959  (3s)
+  epoch  5  loss=0.7519  val_macro_f1=0.5989  (3s)
+  epoch  6  loss=0.7430  val_macro_f1=0.6053  (3s)
+  epoch  7  loss=0.7282  val_macro_f1=0.6130  (3s)
+  epoch  8  loss=0.7078  val_macro_f1=0.6267  (3s)
+  epoch  9  loss=0.6963  val_macro_f1=0.6288  (3s)
+  epoch 10  loss=0.6906  val_macro_f1=0.6297  (3s)
+  epoch 11  loss=0.6846  val_macro_f1=0.6186  (3s)
+  epoch 12  loss=0.6833  val_macro_f1=0.6260  (4s)
+  epoch 13  loss=0.6771  val_macro_f1=0.6356  (3s)
+  epoch 14  loss=0.6747  val_macro_f1=0.6307  (4s)
+  epoch 15  loss=0.6715  val_macro_f1=0.6241  (4s)
+  epoch 16  loss=0.6710  val_macro_f1=0.6254  (4s)
+  epoch 17  loss=0.6609  val_macro_f1=0.6223  (4s)
+  epoch 18  loss=0.6572  val_macro_f1=0.6281  (4s)
+  epoch 19  loss=0.6568  val_macro_f1=0.6300  (4s)
+  early stop (best epoch 13, val macro-F1 0.6356)
+[mlp] TEST macro_f1=0.6351 bal_acc=0.7288 FA=0.2923 AUC=0.9740 fit=65s size=0.2MB
+
+[start] mlp seed 44 at 18:27:53
+  epoch  1  loss=0.8768  val_macro_f1=0.5725  (3s)
+  epoch  2  loss=0.7850  val_macro_f1=0.5860  (4s)
+  epoch  3  loss=0.7660  val_macro_f1=0.5933  (4s)
+  epoch  4  loss=0.7570  val_macro_f1=0.5986  (4s)
+  epoch  5  loss=0.7484  val_macro_f1=0.6046  (4s)
+  epoch  6  loss=0.7398  val_macro_f1=0.6204  (4s)
+  epoch  7  loss=0.7221  val_macro_f1=0.6131  (4s)
+  epoch  8  loss=0.7038  val_macro_f1=0.6296  (4s)
+  epoch  9  loss=0.6929  val_macro_f1=0.6180  (4s)
+  epoch 10  loss=0.6878  val_macro_f1=0.6212  (4s)
+  epoch 11  loss=0.6811  val_macro_f1=0.6311  (4s)
+  epoch 12  loss=0.6775  val_macro_f1=0.6337  (3s)
+  epoch 13  loss=0.6779  val_macro_f1=0.6326  (4s)
+  epoch 14  loss=0.6747  val_macro_f1=0.6314  (4s)
+  epoch 15  loss=0.6706  val_macro_f1=0.6317  (4s)
+  epoch 16  loss=0.6623  val_macro_f1=0.6326  (4s)
+  epoch 17  loss=0.6585  val_macro_f1=0.6336  (3s)
+  epoch 18  loss=0.6571  val_macro_f1=0.6307  (4s)
+  early stop (best epoch 12, val macro-F1 0.6337)
+[mlp] TEST macro_f1=0.6334 bal_acc=0.7256 FA=0.3054 AUC=0.9738 fit=65s size=0.2MB
+
+[start] mlp seed 45 at 18:29:04
+  epoch  1  loss=0.8770  val_macro_f1=0.5866  (3s)
+  epoch  2  loss=0.7835  val_macro_f1=0.5786  (4s)
+  epoch  3  loss=0.7667  val_macro_f1=0.5909  (4s)
+  epoch  4  loss=0.7572  val_macro_f1=0.5995  (4s)
+  epoch  5  loss=0.7480  val_macro_f1=0.6012  (4s)
+  epoch  6  loss=0.7365  val_macro_f1=0.6028  (4s)
+  epoch  7  loss=0.7178  val_macro_f1=0.6126  (4s)
+  epoch  8  loss=0.7037  val_macro_f1=0.6151  (4s)
+  epoch  9  loss=0.6935  val_macro_f1=0.6305  (4s)
+  epoch 10  loss=0.6866  val_macro_f1=0.6266  (4s)
+  epoch 11  loss=0.6830  val_macro_f1=0.6194  (4s)
+  epoch 12  loss=0.6781  val_macro_f1=0.6274  (4s)
+  epoch 13  loss=0.6674  val_macro_f1=0.6309  (4s)
+  epoch 14  loss=0.6642  val_macro_f1=0.6239  (4s)
+  epoch 15  loss=0.6628  val_macro_f1=0.6296  (4s)
+  epoch 16  loss=0.6612  val_macro_f1=0.6294  (3s)
+  epoch 17  loss=0.6551  val_macro_f1=0.6325  (4s)
+  epoch 18  loss=0.6537  val_macro_f1=0.6280  (4s)
+  epoch 19  loss=0.6535  val_macro_f1=0.6308  (4s)
+  epoch 20  loss=0.6518  val_macro_f1=0.6305  (4s)
+  epoch 21  loss=0.6482  val_macro_f1=0.6329  (4s)
+  epoch 22  loss=0.6483  val_macro_f1=0.6363  (4s)
+  epoch 23  loss=0.6471  val_macro_f1=0.6334  (4s)
+  epoch 24  loss=0.6461  val_macro_f1=0.6313  (3s)
+  epoch 25  loss=0.6467  val_macro_f1=0.6325  (4s)
+  epoch 26  loss=0.6442  val_macro_f1=0.6339  (4s)
+  epoch 27  loss=0.6445  val_macro_f1=0.6319  (3s)
+  epoch 28  loss=0.6435  val_macro_f1=0.6339  (4s)
+  early stop (best epoch 22, val macro-F1 0.6363)
+[mlp] TEST macro_f1=0.6349 bal_acc=0.7351 FA=0.2703 AUC=0.9747 fit=100s size=0.2MB
+
+[start] mlp seed 46 at 18:30:50
+  epoch  1  loss=0.8799  val_macro_f1=0.5857  (3s)
+  epoch  2  loss=0.7853  val_macro_f1=0.5728  (4s)
+  epoch  3  loss=0.7666  val_macro_f1=0.5931  (4s)
+  epoch  4  loss=0.7571  val_macro_f1=0.5884  (4s)
+  epoch  5  loss=0.7535  val_macro_f1=0.5916  (4s)
+  epoch  6  loss=0.7430  val_macro_f1=0.6022  (3s)
+  epoch  7  loss=0.7261  val_macro_f1=0.5983  (4s)
+  epoch  8  loss=0.7045  val_macro_f1=0.6169  (4s)
+  epoch  9  loss=0.6927  val_macro_f1=0.6228  (4s)
+  epoch 10  loss=0.6856  val_macro_f1=0.6187  (3s)
+  epoch 11  loss=0.6801  val_macro_f1=0.6268  (4s)
+  epoch 12  loss=0.6779  val_macro_f1=0.6250  (3s)
+  epoch 13  loss=0.6759  val_macro_f1=0.6232  (4s)
+  epoch 14  loss=0.6727  val_macro_f1=0.6262  (3s)
+  epoch 15  loss=0.6617  val_macro_f1=0.6275  (4s)
+  epoch 16  loss=0.6604  val_macro_f1=0.6339  (4s)
+  epoch 17  loss=0.6578  val_macro_f1=0.6240  (4s)
+  epoch 18  loss=0.6577  val_macro_f1=0.6265  (4s)
+  epoch 19  loss=0.6546  val_macro_f1=0.6335  (4s)
+  epoch 20  loss=0.6495  val_macro_f1=0.6291  (4s)
+  epoch 21  loss=0.6495  val_macro_f1=0.6261  (3s)
+  epoch 22  loss=0.6477  val_macro_f1=0.6300  (4s)
+  early stop (best epoch 16, val macro-F1 0.6339)
+[mlp] TEST macro_f1=0.6334 bal_acc=0.7328 FA=0.2738 AUC=0.9745 fit=79s size=0.2MB
+=== --dataset ciciot2023 --level category --models rf,catboost --seeds 43,44
+ciciot2023/category: classes=8 train=2,243,226 test=480,692
+
+[start] rf seed 43 at 18:32:20
+[rf] TEST macro_f1=0.7199 bal_acc=0.7373 FA=0.2101 AUC=0.9784 fit=490s size=3041.0MB
+
+[start] catboost seed 43 at 18:40:43
+[catboost] TEST macro_f1=0.6805 bal_acc=0.7622 FA=0.2057 AUC=0.9776 fit=1227s size=29.8MB
+
+[start] rf seed 44 at 19:01:16
+[rf] TEST macro_f1=0.7198 bal_acc=0.7365 FA=0.2108 AUC=0.9783 fit=503s size=3054.3MB
+
+[start] catboost seed 44 at 19:09:51
+[catboost] TEST macro_f1=0.6806 bal_acc=0.7625 FA=0.2058 AUC=0.9776 fit=1342s size=29.8MB
+=== --dataset ciciot2023 --level category --models cnn1d --seeds 43,44
+ciciot2023/category: classes=8 train=2,243,226 test=480,692
+
+[start] cnn1d seed 43 at 19:32:24
+  epoch  1  loss=0.7957  val_macro_f1=0.5982  (28s)
+  epoch  2  loss=0.7109  val_macro_f1=0.6267  (29s)
+  epoch  3  loss=0.6817  val_macro_f1=0.6186  (28s)
+  epoch  4  loss=0.6676  val_macro_f1=0.6171  (29s)
+  epoch  5  loss=0.6597  val_macro_f1=0.6287  (28s)
+  epoch  6  loss=0.6536  val_macro_f1=0.6334  (27s)
+  epoch  7  loss=0.6497  val_macro_f1=0.6247  (27s)
+  epoch  8  loss=0.6431  val_macro_f1=0.6398  (29s)
+  epoch  9  loss=0.6402  val_macro_f1=0.6353  (28s)
+  epoch 10  loss=0.6374  val_macro_f1=0.6388  (28s)
+  epoch 11  loss=0.6379  val_macro_f1=0.6267  (27s)
+  epoch 12  loss=0.6168  val_macro_f1=0.6379  (28s)
+  epoch 13  loss=0.6133  val_macro_f1=0.6437  (29s)
+  epoch 14  loss=0.6119  val_macro_f1=0.6436  (29s)
+  epoch 15  loss=0.6101  val_macro_f1=0.6412  (29s)
+  epoch 16  loss=0.6067  val_macro_f1=0.6380  (28s)
+  epoch 17  loss=0.5973  val_macro_f1=0.6383  (27s)
+  epoch 18  loss=0.5950  val_macro_f1=0.6406  (27s)
+  epoch 19  loss=0.5932  val_macro_f1=0.6415  (28s)
+  early stop (best epoch 13, val macro-F1 0.6437)
+[cnn1d] TEST macro_f1=0.6427 bal_acc=0.7391 FA=0.2837 AUC=0.9760 fit=534s size=1.1MB
+
+[start] cnn1d seed 44 at 19:41:27
+  epoch  1  loss=0.7909  val_macro_f1=0.5939  (28s)
+  epoch  2  loss=0.6996  val_macro_f1=0.6089  (27s)
+  epoch  3  loss=0.6766  val_macro_f1=0.6237  (27s)
+  epoch  4  loss=0.6659  val_macro_f1=0.6344  (27s)
+  epoch  5  loss=0.6574  val_macro_f1=0.6308  (27s)
+  epoch  6  loss=0.6505  val_macro_f1=0.6259  (28s)
+  epoch  7  loss=0.6480  val_macro_f1=0.6217  (29s)
+  epoch  8  loss=0.6348  val_macro_f1=0.6354  (28s)
+  epoch  9  loss=0.6273  val_macro_f1=0.6289  (28s)
+  epoch 10  loss=0.6247  val_macro_f1=0.6358  (28s)
+  epoch 11  loss=0.6210  val_macro_f1=0.6363  (27s)
+  epoch 12  loss=0.6176  val_macro_f1=0.6409  (28s)
+  epoch 13  loss=0.6163  val_macro_f1=0.5769  (27s)
+  epoch 14  loss=0.6135  val_macro_f1=0.6361  (27s)
+  epoch 15  loss=0.6143  val_macro_f1=0.6356  (28s)
+  epoch 16  loss=0.6023  val_macro_f1=0.6407  (28s)
+  epoch 17  loss=0.5996  val_macro_f1=0.6376  (27s)
+  epoch 18  loss=0.5980  val_macro_f1=0.6389  (28s)
+  early stop (best epoch 12, val macro-F1 0.6409)
+[cnn1d] TEST macro_f1=0.6411 bal_acc=0.7403 FA=0.2709 AUC=0.9758 fit=497s size=1.1MB
+=== --dataset ciciot2023 --level attack_type --models dt,lgbm,xgb --seeds 43,44,45,46
+ciciot2023/attack_type: classes=34 train=2,243,226 test=480,692
+
+[start] dt seed 43 at 19:49:59
+[dt] TEST macro_f1=0.5924 bal_acc=0.6174 FA=0.4053 AUC=0.8771 fit=22s size=77.9MB
+
+[start] lgbm seed 43 at 19:50:28
+[lgbm] TEST macro_f1=0.6474 bal_acc=0.6523 FA=0.2328 AUC=0.9882 fit=705s size=84.5MB
+
+[start] xgb seed 43 at 20:05:37
+[xgb] TEST macro_f1=0.6322 bal_acc=0.6591 FA=0.2842 AUC=0.9878 fit=661s size=82.3MB
+
+[start] dt seed 44 at 20:17:07
+[dt] TEST macro_f1=0.5916 bal_acc=0.6160 FA=0.4072 AUC=0.8764 fit=22s size=77.9MB
+
+[start] lgbm seed 44 at 20:17:36
+[lgbm] TEST macro_f1=0.6462 bal_acc=0.6530 FA=0.2322 AUC=0.9881 fit=708s size=84.5MB
+
+[start] xgb seed 44 at 20:32:46
+[xgb] TEST macro_f1=0.6330 bal_acc=0.6596 FA=0.2821 AUC=0.9878 fit=640s size=82.7MB
+
+[start] dt seed 45 at 20:43:55
+[dt] TEST macro_f1=0.5920 bal_acc=0.6166 FA=0.4062 AUC=0.8768 fit=22s size=77.9MB
+
+[start] lgbm seed 45 at 20:44:23
+[lgbm] TEST macro_f1=0.6462 bal_acc=0.6525 FA=0.2332 AUC=0.9882 fit=725s size=84.5MB
+
+[start] xgb seed 45 at 20:59:52
+[xgb] TEST macro_f1=0.6337 bal_acc=0.6605 FA=0.2839 AUC=0.9878 fit=647s size=82.2MB
+
+[start] dt seed 46 at 21:11:08
+[dt] TEST macro_f1=0.5916 bal_acc=0.6165 FA=0.4069 AUC=0.8767 fit=22s size=77.9MB
+
+[start] lgbm seed 46 at 21:11:38
+[lgbm] TEST macro_f1=0.6473 bal_acc=0.6525 FA=0.2292 AUC=0.9881 fit=732s size=84.4MB
+
+[start] xgb seed 46 at 21:27:17
+[xgb] TEST macro_f1=0.6329 bal_acc=0.6597 FA=0.2847 AUC=0.9878 fit=628s size=82.4MB
+=== --dataset ciciot2023 --level attack_type --models mlp --seeds 43,44,45,46
+ciciot2023/attack_type: classes=34 train=2,243,226 test=480,692
+
+[start] mlp seed 43 at 21:38:16
+  epoch  1  loss=0.9754  val_macro_f1=0.5502  (3s)
+  epoch  2  loss=0.8142  val_macro_f1=0.5503  (3s)
+  epoch  3  loss=0.7817  val_macro_f1=0.5822  (3s)
+  epoch  4  loss=0.7718  val_macro_f1=0.5828  (4s)
+  epoch  5  loss=0.7628  val_macro_f1=0.5818  (3s)
+  epoch  6  loss=0.7584  val_macro_f1=0.5921  (3s)
+  epoch  7  loss=0.7538  val_macro_f1=0.5942  (3s)
+  epoch  8  loss=0.7493  val_macro_f1=0.5953  (3s)
+  epoch  9  loss=0.7513  val_macro_f1=0.5954  (4s)
+  epoch 10  loss=0.7409  val_macro_f1=0.6010  (3s)
+  epoch 11  loss=0.7368  val_macro_f1=0.6040  (3s)
+  epoch 12  loss=0.7351  val_macro_f1=0.5946  (4s)
+  epoch 13  loss=0.7326  val_macro_f1=0.6029  (4s)
+  epoch 14  loss=0.7298  val_macro_f1=0.6032  (3s)
+  epoch 15  loss=0.7200  val_macro_f1=0.6037  (3s)
+  epoch 16  loss=0.7185  val_macro_f1=0.6079  (4s)
+  epoch 17  loss=0.7161  val_macro_f1=0.6012  (3s)
+  epoch 18  loss=0.7163  val_macro_f1=0.6070  (4s)
+  epoch 19  loss=0.7150  val_macro_f1=0.6017  (4s)
+  epoch 20  loss=0.7096  val_macro_f1=0.6061  (3s)
+  epoch 21  loss=0.7086  val_macro_f1=0.6118  (3s)
+  epoch 22  loss=0.7083  val_macro_f1=0.6075  (4s)
+  epoch 23  loss=0.7074  val_macro_f1=0.6063  (4s)
+  epoch 24  loss=0.7068  val_macro_f1=0.6138  (4s)
+  epoch 25  loss=0.7071  val_macro_f1=0.6120  (4s)
+  epoch 26  loss=0.7061  val_macro_f1=0.6107  (4s)
+  epoch 27  loss=0.7063  val_macro_f1=0.6079  (4s)
+  epoch 28  loss=0.7044  val_macro_f1=0.6083  (4s)
+  epoch 29  loss=0.7033  val_macro_f1=0.6100  (4s)
+  epoch 30  loss=0.7032  val_macro_f1=0.6080  (4s)
+  early stop (best epoch 24, val macro-F1 0.6138)
+[mlp] TEST macro_f1=0.6130 bal_acc=0.6172 FA=0.2609 AUC=0.9859 fit=106s size=0.2MB
+
+[start] mlp seed 44 at 21:40:11
+  epoch  1  loss=0.9759  val_macro_f1=0.5641  (3s)
+  epoch  2  loss=0.8156  val_macro_f1=0.5764  (4s)
+  epoch  3  loss=0.7846  val_macro_f1=0.5788  (4s)
+  epoch  4  loss=0.7699  val_macro_f1=0.5863  (4s)
+  epoch  5  loss=0.7640  val_macro_f1=0.5873  (4s)
+  epoch  6  loss=0.7585  val_macro_f1=0.5856  (4s)
+  epoch  7  loss=0.7564  val_macro_f1=0.5904  (3s)
+  epoch  8  loss=0.7605  val_macro_f1=0.5900  (3s)
+  epoch  9  loss=0.7515  val_macro_f1=0.5936  (4s)
+  epoch 10  loss=0.7476  val_macro_f1=0.5965  (4s)
+  epoch 11  loss=0.7424  val_macro_f1=0.5975  (3s)
+  epoch 12  loss=0.7412  val_macro_f1=0.6011  (3s)
+  epoch 13  loss=0.7348  val_macro_f1=0.6024  (4s)
+  epoch 14  loss=0.7331  val_macro_f1=0.6008  (4s)
+  epoch 15  loss=0.7306  val_macro_f1=0.5996  (4s)
+  epoch 16  loss=0.7248  val_macro_f1=0.6013  (3s)
+  epoch 17  loss=0.7169  val_macro_f1=0.6027  (3s)
+  epoch 18  loss=0.7155  val_macro_f1=0.6042  (4s)
+  epoch 19  loss=0.7137  val_macro_f1=0.6092  (3s)
+  epoch 20  loss=0.7127  val_macro_f1=0.6095  (4s)
+  epoch 21  loss=0.7138  val_macro_f1=0.6115  (4s)
+  epoch 22  loss=0.7117  val_macro_f1=0.6099  (4s)
+  epoch 23  loss=0.7120  val_macro_f1=0.6053  (4s)
+  epoch 24  loss=0.7117  val_macro_f1=0.6091  (4s)
+  epoch 25  loss=0.7069  val_macro_f1=0.6098  (3s)
+  epoch 26  loss=0.7055  val_macro_f1=0.6072  (3s)
+  epoch 27  loss=0.7046  val_macro_f1=0.6072  (4s)
+  early stop (best epoch 21, val macro-F1 0.6115)
+[mlp] TEST macro_f1=0.6104 bal_acc=0.6159 FA=0.2542 AUC=0.9858 fit=98s size=0.2MB
+
+[start] mlp seed 45 at 21:41:59
+  epoch  1  loss=0.9762  val_macro_f1=0.5458  (3s)
+  epoch  2  loss=0.8132  val_macro_f1=0.5806  (3s)
+  epoch  3  loss=0.7824  val_macro_f1=0.5782  (4s)
+  epoch  4  loss=0.7680  val_macro_f1=0.5859  (3s)
+  epoch  5  loss=0.7608  val_macro_f1=0.5923  (3s)
+  epoch  6  loss=0.7560  val_macro_f1=0.5939  (3s)
+  epoch  7  loss=0.7575  val_macro_f1=0.5867  (3s)
+  epoch  8  loss=0.7536  val_macro_f1=0.5920  (3s)
+  epoch  9  loss=0.7488  val_macro_f1=0.6022  (3s)
+  epoch 10  loss=0.7405  val_macro_f1=0.6057  (3s)
+  epoch 11  loss=0.7380  val_macro_f1=0.6079  (3s)
+  epoch 12  loss=0.7321  val_macro_f1=0.6026  (3s)
+  epoch 13  loss=0.7324  val_macro_f1=0.6065  (3s)
+  epoch 14  loss=0.7315  val_macro_f1=0.6018  (4s)
+  epoch 15  loss=0.7220  val_macro_f1=0.6006  (3s)
+  epoch 16  loss=0.7178  val_macro_f1=0.6089  (3s)
+  epoch 17  loss=0.7150  val_macro_f1=0.6065  (3s)
+  epoch 18  loss=0.7149  val_macro_f1=0.6088  (4s)
+  epoch 19  loss=0.7140  val_macro_f1=0.6071  (3s)
+  epoch 20  loss=0.7091  val_macro_f1=0.6104  (3s)
+  epoch 21  loss=0.7083  val_macro_f1=0.6121  (3s)
+  epoch 22  loss=0.7070  val_macro_f1=0.6110  (3s)
+  epoch 23  loss=0.7071  val_macro_f1=0.6095  (3s)
+  epoch 24  loss=0.7065  val_macro_f1=0.6117  (3s)
+  epoch 25  loss=0.7046  val_macro_f1=0.6119  (3s)
+  epoch 26  loss=0.7036  val_macro_f1=0.6130  (3s)
+  epoch 27  loss=0.7039  val_macro_f1=0.6107  (3s)
+  epoch 28  loss=0.7031  val_macro_f1=0.6121  (3s)
+  epoch 29  loss=0.7036  val_macro_f1=0.6125  (3s)
+  epoch 30  loss=0.7025  val_macro_f1=0.6115  (4s)
+  epoch 31  loss=0.7019  val_macro_f1=0.6127  (4s)
+  epoch 32  loss=0.7015  val_macro_f1=0.6125  (4s)
+  early stop (best epoch 26, val macro-F1 0.6130)
+[mlp] TEST macro_f1=0.6131 bal_acc=0.6168 FA=0.2383 AUC=0.9859 fit=110s size=0.2MB
+
+[start] mlp seed 46 at 21:43:58
+  epoch  1  loss=0.9795  val_macro_f1=0.5640  (3s)
+  epoch  2  loss=0.8131  val_macro_f1=0.5837  (3s)
+  epoch  3  loss=0.7829  val_macro_f1=0.5805  (3s)
+  epoch  4  loss=0.7687  val_macro_f1=0.5866  (3s)
+  epoch  5  loss=0.7618  val_macro_f1=0.5940  (3s)
+  epoch  6  loss=0.7582  val_macro_f1=0.5853  (3s)
+  epoch  7  loss=0.7585  val_macro_f1=0.5980  (3s)
+  epoch  8  loss=0.7510  val_macro_f1=0.6028  (3s)
+  epoch  9  loss=0.7506  val_macro_f1=0.5979  (3s)
+  epoch 10  loss=0.7478  val_macro_f1=0.5987  (3s)
+  epoch 11  loss=0.7401  val_macro_f1=0.6035  (3s)
+  epoch 12  loss=0.7376  val_macro_f1=0.5968  (3s)
+  epoch 13  loss=0.7321  val_macro_f1=0.6046  (4s)
+  epoch 14  loss=0.7297  val_macro_f1=0.6010  (3s)
+  epoch 15  loss=0.7288  val_macro_f1=0.6041  (3s)
+  epoch 16  loss=0.7254  val_macro_f1=0.6066  (3s)
+  epoch 17  loss=0.7289  val_macro_f1=0.6078  (3s)
+  epoch 18  loss=0.7253  val_macro_f1=0.6029  (4s)
+  epoch 19  loss=0.7236  val_macro_f1=0.6099  (4s)
+  epoch 20  loss=0.7238  val_macro_f1=0.6100  (3s)
+  epoch 21  loss=0.7246  val_macro_f1=0.6090  (3s)
+  epoch 22  loss=0.7200  val_macro_f1=0.6089  (3s)
+  epoch 23  loss=0.7204  val_macro_f1=0.6076  (3s)
+  epoch 24  loss=0.7111  val_macro_f1=0.6108  (3s)
+  epoch 25  loss=0.7089  val_macro_f1=0.6090  (4s)
+  epoch 26  loss=0.7108  val_macro_f1=0.6101  (3s)
+  epoch 27  loss=0.7094  val_macro_f1=0.6118  (3s)
+  epoch 28  loss=0.7082  val_macro_f1=0.6125  (3s)
+  epoch 29  loss=0.7066  val_macro_f1=0.6139  (3s)
+  epoch 30  loss=0.7062  val_macro_f1=0.6108  (3s)
+  epoch 31  loss=0.7064  val_macro_f1=0.6134  (4s)
+  epoch 32  loss=0.7076  val_macro_f1=0.6114  (4s)
+  epoch 33  loss=0.7031  val_macro_f1=0.6124  (3s)
+  epoch 34  loss=0.7024  val_macro_f1=0.6146  (3s)
+  epoch 35  loss=0.7013  val_macro_f1=0.6150  (3s)
+  epoch 36  loss=0.7013  val_macro_f1=0.6139  (4s)
+  epoch 37  loss=0.7013  val_macro_f1=0.6128  (3s)
+  epoch 38  loss=0.7005  val_macro_f1=0.6155  (3s)
+  epoch 39  loss=0.7000  val_macro_f1=0.6151  (3s)
+  epoch 40  loss=0.7006  val_macro_f1=0.6133  (3s)
+[mlp] TEST macro_f1=0.6164 bal_acc=0.6196 FA=0.2479 AUC=0.9861 fit=138s size=0.2MB
+=== --dataset ciciot2023 --level attack_type --models cnn1d --seeds 43,44
+ciciot2023/attack_type: classes=34 train=2,243,226 test=480,692
+
+[start] cnn1d seed 43 at 21:46:31
+  epoch  1  loss=0.8356  val_macro_f1=0.5853  (26s)
+  epoch  2  loss=0.7582  val_macro_f1=0.6023  (26s)
+  epoch  3  loss=0.7323  val_macro_f1=0.5598  (25s)
+  epoch  4  loss=0.7171  val_macro_f1=0.5960  (24s)
+  epoch  5  loss=0.7119  val_macro_f1=0.6055  (24s)
+  epoch  6  loss=0.7009  val_macro_f1=0.6139  (24s)
+  epoch  7  loss=0.6958  val_macro_f1=0.6110  (25s)
+  epoch  8  loss=0.6944  val_macro_f1=0.6118  (26s)
+  epoch  9  loss=0.6916  val_macro_f1=0.6167  (26s)
+  epoch 10  loss=0.6917  val_macro_f1=0.6140  (25s)
+  epoch 11  loss=0.6884  val_macro_f1=0.6175  (25s)
+  epoch 12  loss=0.6894  val_macro_f1=0.6062  (25s)
+  epoch 13  loss=0.6872  val_macro_f1=0.5838  (25s)
+  epoch 14  loss=0.6862  val_macro_f1=0.6176  (25s)
+  epoch 15  loss=0.6803  val_macro_f1=0.6183  (24s)
+  epoch 16  loss=0.6762  val_macro_f1=0.6181  (25s)
+  epoch 17  loss=0.6753  val_macro_f1=0.6149  (25s)
+  epoch 18  loss=0.6753  val_macro_f1=0.6193  (25s)
+  epoch 19  loss=0.6753  val_macro_f1=0.6205  (27s)
+  epoch 20  loss=0.6801  val_macro_f1=0.6210  (25s)
+  epoch 21  loss=0.6707  val_macro_f1=0.6201  (25s)
+  epoch 22  loss=0.6731  val_macro_f1=0.6199  (25s)
+  epoch 23  loss=0.6704  val_macro_f1=0.6214  (25s)
+  epoch 24  loss=0.6667  val_macro_f1=0.6210  (25s)
+  epoch 25  loss=0.6661  val_macro_f1=0.6198  (26s)
+  epoch 26  loss=0.6670  val_macro_f1=0.6100  (27s)
+  epoch 27  loss=0.6557  val_macro_f1=0.6245  (25s)
+  epoch 28  loss=0.6543  val_macro_f1=0.6237  (24s)
+  epoch 29  loss=0.6515  val_macro_f1=0.6234  (25s)
+  epoch 30  loss=0.6518  val_macro_f1=0.6229  (25s)
+  epoch 31  loss=0.6460  val_macro_f1=0.6241  (26s)
+  epoch 32  loss=0.6445  val_macro_f1=0.6229  (27s)
+  epoch 33  loss=0.6439  val_macro_f1=0.6233  (26s)
+  early stop (best epoch 27, val macro-F1 0.6245)
+[cnn1d] TEST macro_f1=0.6269 bal_acc=0.6273 FA=0.2483 AUC=0.9865 fit=832s size=1.1MB
+
+[start] cnn1d seed 44 at 22:00:35
+  epoch  1  loss=0.8405  val_macro_f1=0.5652  (25s)
+  epoch  2  loss=0.7675  val_macro_f1=0.5969  (25s)
+  epoch  3  loss=0.7357  val_macro_f1=0.5999  (26s)
+  epoch  4  loss=0.7128  val_macro_f1=0.6074  (26s)
+  epoch  5  loss=0.7077  val_macro_f1=0.6099  (25s)
+  epoch  6  loss=0.7015  val_macro_f1=0.6129  (28s)
+  epoch  7  loss=0.7015  val_macro_f1=0.6120  (28s)
+  epoch  8  loss=0.6952  val_macro_f1=0.6163  (29s)
+  epoch  9  loss=0.6925  val_macro_f1=0.5860  (28s)
+  epoch 10  loss=0.6917  val_macro_f1=0.6157  (28s)
+  epoch 11  loss=0.6868  val_macro_f1=0.6179  (27s)
+  epoch 12  loss=0.6887  val_macro_f1=0.6195  (28s)
+  epoch 13  loss=0.6851  val_macro_f1=0.4706  (28s)
+  epoch 14  loss=0.6807  val_macro_f1=0.6207  (29s)
+  epoch 15  loss=0.6822  val_macro_f1=0.6217  (29s)
+  epoch 16  loss=0.6762  val_macro_f1=0.6179  (29s)
+  epoch 17  loss=0.6776  val_macro_f1=0.6200  (28s)
+  epoch 18  loss=0.6765  val_macro_f1=0.6223  (28s)
+  epoch 19  loss=0.6716  val_macro_f1=0.6221  (28s)
+  epoch 20  loss=0.6737  val_macro_f1=0.6221  (28s)
+  epoch 21  loss=0.6730  val_macro_f1=0.6201  (28s)
+  epoch 22  loss=0.6615  val_macro_f1=0.6205  (27s)
+  epoch 23  loss=0.6597  val_macro_f1=0.6224  (28s)
+  epoch 24  loss=0.6598  val_macro_f1=0.5592  (27s)
+  epoch 25  loss=0.6575  val_macro_f1=0.6208  (28s)
+  epoch 26  loss=0.6569  val_macro_f1=0.6210  (28s)
+  epoch 27  loss=0.6512  val_macro_f1=0.6242  (28s)
+  epoch 28  loss=0.6500  val_macro_f1=0.6252  (29s)
+  epoch 29  loss=0.6494  val_macro_f1=0.6240  (28s)
+  epoch 30  loss=0.6489  val_macro_f1=0.6247  (27s)
+  epoch 31  loss=0.6480  val_macro_f1=0.6236  (28s)
+  epoch 32  loss=0.6449  val_macro_f1=0.6258  (27s)
+  epoch 33  loss=0.6443  val_macro_f1=0.5600  (28s)
+  epoch 34  loss=0.6443  val_macro_f1=0.6256  (28s)
+  epoch 35  loss=0.6434  val_macro_f1=0.6267  (28s)
+  epoch 36  loss=0.6431  val_macro_f1=0.6253  (28s)
+  epoch 37  loss=0.6429  val_macro_f1=0.6261  (28s)
+  epoch 38  loss=0.6425  val_macro_f1=0.6257  (28s)
+  epoch 39  loss=0.6404  val_macro_f1=0.6252  (27s)
+  epoch 40  loss=0.6404  val_macro_f1=0.6248  (27s)
+[cnn1d] TEST macro_f1=0.6286 bal_acc=0.6301 FA=0.2569 AUC=0.9866 fit=1106s size=1.1MB
+STAGE 2 DONE
