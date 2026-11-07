@@ -10,3 +10,4 @@ mlruns/
 /data/processed/
 catboost_info/
 mlflow.db
+results/tuning/optuna.db
