@@ -1,7 +1,7 @@
 # Data card: CICIoT2023
 
 ## Overview
-- **Source:** Canadian Institute for Cybersecurity, IoT attack dataset (flow-level features extracted from pcap captures of an IoT testbed).
+- **Source:** IoT attack dataset (flow-level features extracted from pcap captures of an IoT testbed).
 - **Task:** Detection of IoT network attacks: binary (benign vs attack), 8-way category, and 34-way attack type.
 - **Labels:** `binary` (0 = Benign, 1 = Attack); `category` (Benign, DDoS, DoS, Recon, Mirai, Spoofing, BruteForce, Web); `attack_type` (folder name of the capture, Benign merged into one class).
 - **Sampling:** Attack folders under 30 MB keep 100% of rows (rare classes); larger folders are sampled at 10%.
