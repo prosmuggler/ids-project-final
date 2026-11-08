@@ -38,3 +38,11 @@
 1. Is leave-one-category-out an acceptable definition of "attacks never trained on"?
 2. May the LSTM autoencoder and per-node sequences be replaced by a dense autoencoder and per-row ratio features?
 3. Is N-BaIoT/TON_IoT required, or are CICIoT2023 + WSN-DS enough for Objective 3?
+
+## Objective 3 - probe results (test split, 3 seeds)
+- Benign-only detectors, thresholds from benign validation percentiles; test benign false alarms matched nominal (about 5%, 1%, 0.5%).
+- CICIoT2023 autoencoder: DDoS, DoS, Mirai detected ~100% even at the 99.5th percentile (AUC 1.000); Recon AUC 0.83 (31% at 99th pct); BruteForce 0.81 (13%); Web 0.77 (5.5%); Spoofing 0.74 (6.5%). Isolation Forest is weaker on floods.
+- WSN-DS: Isolation Forest collapses at the 99th percentile (6-16% detected) while the autoencoder keeps 79-99.8%; AE chosen.
+- The autoencoder hit the 100-epoch cap in 5 of 6 runs and its best benign validation error varies across seeds: not fully converged.
+- The probe was run on the TEST split; operating points (percentile, confidence threshold) are chosen on validation in hybrid.py.
+- Feature ranking (top 30) was computed with all categories present; disclose as a limitation.
