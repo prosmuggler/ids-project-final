@@ -83,11 +83,18 @@ def main():
         bidx = int(le.transform([ben])[0])
         y = le.transform(trn.category)
         cw = dict(enumerate(compute_class_weight("balanced", classes=np.arange(C), y=y)))
-        clf = LGBMClassifier(class_weight=cw, subsample_freq=1, n_jobs=-1, random_state=a.clf_seed,
-                             verbose=-1, **params).fit(trn[feats], y)
-        print(f"  held out {h}: classifier trained on {len(trn):,} rows in {time.time() - t0:.0f}s", flush=True)
+        cp = {sp: OUT / "clf_cache" / f"{ds}_{h}_{sp}.npy" for sp in ("val", "test")}
+        if all(q.exists() for q in cp.values()):
+            print(f"  held out {h}: classifier probabilities loaded from cache", flush=True)
+        else:
+            clf = LGBMClassifier(class_weight=cw, subsample_freq=1, n_jobs=-1, random_state=a.clf_seed,
+                                 verbose=-1, **params).fit(trn[feats], y)
+            (OUT / "clf_cache").mkdir(parents=True, exist_ok=True)
+            for sp, d_ in (("val", va), ("test", te)):
+                np.save(cp[sp], clf.predict_proba(d_[feats]).astype(np.float32))
+            print(f"  held out {h}: classifier trained on {len(trn):,} rows in {time.time() - t0:.0f}s", flush=True)
         for split, df in (("val", va), ("test", te)):
-            proba = clf.predict_proba(df[feats])
+            proba = np.load(cp[split])
             pmax, pidx = proba.max(1), proba.argmax(1)
             cat = df.category.to_numpy()
             held, known = cat == h, cat != h
@@ -116,13 +123,15 @@ def main():
                     for tau in TAUS:
                         lab = np.where(flagged, np.where(pmax >= tau, pidx, unk), bidx)
                         emit("hybrid", lab, seed, p, tau)
+                        lab2 = np.where((pmax < tau) | (flagged & (pidx == bidx)), unk, pidx)
+                        emit("hybrid-or", lab2, seed, p, tau)
 
     res = pd.DataFrame(rows)
     res.to_csv(OUT / f"hybrid_{ds}_{a.detector}.csv", index=False)
 
     print("\n== VALIDATION grid: hybrid, mean over held-out categories and anomaly seeds "
           "(use this to choose percentile and tau)")
-    g = res[(res.split == "val") & (res.system == "hybrid")].groupby(["pctl", "tau"])[
+    g = res[(res.split == "val") & res.system.isin(["hybrid", "hybrid-or"])].groupby(["system", "pctl", "tau"])[
         ["heldout_detected", "heldout_unknown", "heldout_missed", "known_benign_false_alarm", "known_macro_f1"]].mean()
     print(g.round(3).to_string())
 
@@ -134,17 +143,33 @@ def main():
         return m.groupby("heldout").mean(numeric_only=True)
     sup, anom = pick("supervised"), pick("anomaly-only", pctl=a.pctl)
     hyb, rej = pick("hybrid", pctl=a.pctl, tau=a.tau), pick("supervised+reject", tau=a.tau)
+    hor = pick("hybrid-or", pctl=a.pctl, tau=a.tau)
     tab = pd.DataFrame({
         "sup_detected": sup.heldout_detected, "rej_detected": rej.heldout_detected,
         "rej_unknown": rej.heldout_unknown, "anom_detected": anom.heldout_detected,
         "hyb_detected": hyb.heldout_detected, "hyb_unknown": hyb.heldout_unknown,
         "hyb_misassigned": hyb.heldout_misassigned, "hyb_missed": hyb.heldout_missed,
         "hyb_benignFA": hyb.known_benign_false_alarm, "hyb_knownF1": hyb.known_macro_f1,
-        "sup_knownF1": sup.known_macro_f1})
+        "sup_knownF1": sup.known_macro_f1,
+        "hor_detected": hor.heldout_detected, "hor_unknown": hor.heldout_unknown,
+        "hor_misassigned": hor.heldout_misassigned, "hor_missed": hor.heldout_missed,
+        "hor_benignFA": hor.known_benign_false_alarm, "hor_knownF1": hor.known_macro_f1})
     print(f"\n== TEST, per held-out category (percentile {a.pctl}, tau {a.tau}; mean over anomaly seeds)")
     print("   detected = labelled anything but benign; unknown = labelled 'unknown'; "
           "misassigned = confidently given a wrong known attack name; missed = called benign")
     print(tab.round(3).to_string())
+    cols = ["heldout_detected", "heldout_unknown", "heldout_missed", "known_benign_false_alarm",
+            "known_attack_unknown", "known_macro_f1"]
+    for sp in ("val", "test"):
+        d = res[res.split == sp]
+        sel = [("supervised", d[d.system == "supervised"]),
+               ("supervised+reject", d[(d.system == "supervised+reject") & np.isclose(d.tau, a.tau)]),
+               ("anomaly-only", d[(d.system == "anomaly-only") & np.isclose(d.pctl, a.pctl)]),
+               ("hybrid (gate)", d[(d.system == "hybrid") & np.isclose(d.pctl, a.pctl) & np.isclose(d.tau, a.tau)]),
+               ("hybrid-or", d[(d.system == "hybrid-or") & np.isclose(d.pctl, a.pctl) & np.isclose(d.tau, a.tau)])]
+        print(f"\n== SYSTEM COMPARISON on {sp.upper()} (percentile {a.pctl}, tau {a.tau}); "
+              f"mean over held-out categories and seeds")
+        print(pd.DataFrame([m[cols].mean().rename(n) for n, m in sel]).round(3).to_string())
     print("\nsaved", OUT / f"hybrid_{ds}_{a.detector}.csv")
 
 

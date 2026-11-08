@@ -13,3 +13,4 @@ mlflow.db
 results/tuning/optuna.db
 results/final/probs/
 results/anomaly/scores_*.npy
+results/anomaly/clf_cache/
