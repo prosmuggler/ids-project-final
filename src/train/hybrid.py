@@ -125,13 +125,17 @@ def main():
                         emit("hybrid", lab, seed, p, tau)
                         lab2 = np.where((pmax < tau) | (flagged & (pidx == bidx)), unk, pidx)
                         emit("hybrid-or", lab2, seed, p, tau)
+                        lab3 = np.where(flagged,
+                                        np.where((pmax >= tau) & (pidx != bidx), pidx, unk),
+                                        np.where((pidx == bidx) | (pmax < tau), bidx, pidx))
+                        emit("hybrid-guard", lab3, seed, p, tau)
 
     res = pd.DataFrame(rows)
     res.to_csv(OUT / f"hybrid_{ds}_{a.detector}.csv", index=False)
 
     print("\n== VALIDATION grid: hybrid, mean over held-out categories and anomaly seeds "
           "(use this to choose percentile and tau)")
-    g = res[(res.split == "val") & res.system.isin(["hybrid", "hybrid-or"])].groupby(["system", "pctl", "tau"])[
+    g = res[(res.split == "val") & res.system.isin(["hybrid", "hybrid-or", "hybrid-guard"])].groupby(["system", "pctl", "tau"])[
         ["heldout_detected", "heldout_unknown", "heldout_missed", "known_benign_false_alarm", "known_macro_f1"]].mean()
     print(g.round(3).to_string())
 
@@ -159,14 +163,15 @@ def main():
           "misassigned = confidently given a wrong known attack name; missed = called benign")
     print(tab.round(3).to_string())
     cols = ["heldout_detected", "heldout_unknown", "heldout_missed", "known_benign_false_alarm",
-            "known_attack_unknown", "known_macro_f1"]
+            "known_attack_detected", "known_attack_unknown", "known_macro_f1"]
     for sp in ("val", "test"):
         d = res[res.split == sp]
         sel = [("supervised", d[d.system == "supervised"]),
                ("supervised+reject", d[(d.system == "supervised+reject") & np.isclose(d.tau, a.tau)]),
                ("anomaly-only", d[(d.system == "anomaly-only") & np.isclose(d.pctl, a.pctl)]),
                ("hybrid (gate)", d[(d.system == "hybrid") & np.isclose(d.pctl, a.pctl) & np.isclose(d.tau, a.tau)]),
-               ("hybrid-or", d[(d.system == "hybrid-or") & np.isclose(d.pctl, a.pctl) & np.isclose(d.tau, a.tau)])]
+               ("hybrid-or", d[(d.system == "hybrid-or") & np.isclose(d.pctl, a.pctl) & np.isclose(d.tau, a.tau)]),
+               ("hybrid-guard", d[(d.system == "hybrid-guard") & np.isclose(d.pctl, a.pctl) & np.isclose(d.tau, a.tau)])]
         print(f"\n== SYSTEM COMPARISON on {sp.upper()} (percentile {a.pctl}, tau {a.tau}); "
               f"mean over held-out categories and seeds")
         print(pd.DataFrame([m[cols].mean().rename(n) for n, m in sel]).round(3).to_string())

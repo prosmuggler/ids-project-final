@@ -46,3 +46,11 @@
 - The autoencoder hit the 100-epoch cap in 5 of 6 runs and its best benign validation error varies across seeds: not fully converged.
 - The probe was run on the TEST split; operating points (percentile, confidence threshold) are chosen on validation in hybrid.py.
 - Feature ranking (top 30) was computed with all categories present; disclose as a limitation.
+
+## Objective 3 - hybrid results (test split, guide defaults: 99th percentile, tau 0.6)
+- Gated hybrid as specified performs worse than its parts: on WSN-DS the classifier (trained without the held-out attack) calls flagged rows "Normal" with confidence (detected 35% vs 87% anomaly-only); on CICIoT2023 known-class macro-F1 falls from 0.71 to 0.475.
+- hybrid-or (classifier decides; unknown if confidence < tau or if the detector flags a benign verdict): WSN-DS detects 87% of unseen attacks at 1.1% benign false alarms with known-class macro-F1 0.971 (supervised 0.972).
+- CICIoT2023: hybrid-or detects 94.4% of unseen attacks but gives 35% benign false alarms (supervised alone 18%, anomaly-only 1%) and 16.6% of known attacks reported unknown; it is within 0.2 points of supervised+reject, i.e. the benign-only detector adds almost nothing beyond confidence rejection. Cause: Benign vs Recon overlap in the flow features.
+- Unseen floods (DDoS/DoS/Mirai) are alarmed 100% but almost never labelled unknown (confidently assigned to another flood family).
+- "detected" = alarm raised (labelled anything but benign); "unknown" and "misassigned" are reported separately.
+- Validation and test agree within ~0.003; operating points are chosen on validation.

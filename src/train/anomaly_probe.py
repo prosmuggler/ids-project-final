@@ -91,6 +91,29 @@ def ae_scores(Xb_tr, Xb_val, X_test, seed, epochs=100, patience=8, bs=512, X_val
     return err(va), err(te), (None if X_val_all is None else err(prep(X_val_all)))
 
 
+def _prep_for(Xb_tr):
+    sc = StandardScaler().fit(Xb_tr)                                 # fit on BENIGN train only
+    return lambda X: np.clip(sc.transform(X), -10, 10)
+
+
+def ocsvm_scores(Xb_tr, Xb_val, X_test, seed, X_val_all=None, n_fit=20000):
+    from sklearn.svm import OneClassSVM
+    prep = _prep_for(Xb_tr)
+    idx = np.random.default_rng(seed).choice(len(Xb_tr), min(n_fit, len(Xb_tr)), replace=False)
+    m = OneClassSVM(kernel="rbf", gamma="scale", nu=0.05).fit(prep(Xb_tr[idx]))   # benign SUBSAMPLE
+    f = lambda X: -m.score_samples(prep(X))                          # higher = more anomalous
+    return f(Xb_val), f(X_test), (None if X_val_all is None else f(X_val_all))
+
+
+def lof_scores(Xb_tr, Xb_val, X_test, seed, X_val_all=None, n_fit=20000):
+    from sklearn.neighbors import LocalOutlierFactor
+    prep = _prep_for(Xb_tr)
+    idx = np.random.default_rng(seed).choice(len(Xb_tr), min(n_fit, len(Xb_tr)), replace=False)
+    m = LocalOutlierFactor(n_neighbors=20, novelty=True, n_jobs=-1).fit(prep(Xb_tr[idx]))
+    f = lambda X: -m.score_samples(prep(X))
+    return f(Xb_val), f(X_test), (None if X_val_all is None else f(X_val_all))
+
+
 def evaluate(s_val, s_test, test, ds):
     thr = {p: np.percentile(s_val, p) for p in PCTS}
     ben_name = BENIGN[ds]
@@ -114,7 +137,7 @@ def evaluate(s_val, s_test, test, ds):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dataset", required=True, choices=list(BENIGN))
-    ap.add_argument("--detector", required=True, choices=["iforest", "ae"])
+    ap.add_argument("--detector", required=True, choices=["iforest", "ae", "ocsvm", "lof"])
     ap.add_argument("--seeds", default="42,43,44")
     ap.add_argument("--save-scores", action="store_true", help="save per-row scores for hybrid.py")
     a = ap.parse_args()
@@ -132,7 +155,7 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     for seed in [int(s) for s in a.seeds.split(",")]:
         t0 = time.time()
-        fn = iforest_scores if a.detector == "iforest" else ae_scores
+        fn = {"iforest": iforest_scores, "ae": ae_scores, "ocsvm": ocsvm_scores, "lof": lof_scores}[a.detector]
         full_val = parts["val"][feats].to_numpy(np.float32) if a.save_scores else None
         s_val, s_test, s_val_all = fn(Xb_tr, Xb_val, X_test, seed, X_val_all=full_val)
         if a.save_scores:
