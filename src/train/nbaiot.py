@@ -40,6 +40,7 @@ def main():
     ap.add_argument("--detector", required=True, choices=["iforest", "ae"])
     ap.add_argument("--seeds", default="42")
     ap.add_argument("--devices", default="")
+    ap.add_argument("--dedup", action="store_true", help="drop duplicate benign rows before the time split")
     a = ap.parse_args()
 
     found = sorted({int(m.group(1)) for f in DATA.glob("*.csv") if (m := re.match(r"(\d+)\.", f.name))})
@@ -49,6 +50,8 @@ def main():
     for dev in devices:
         t0 = time.time()
         ben = read(DATA / f"{dev}.benign.csv")
+        if a.dedup:
+            ben = pd.DataFrame(ben).drop_duplicates().to_numpy()          # keeps first occurrence, keeps order
         n = len(ben)
         i1, i2 = int(0.70 * n), int(0.85 * n)
         tr, va, te = ben[:i1], ben[i1:i2], ben[i2:]                  # time order, no shuffling
@@ -79,7 +82,8 @@ def main():
 
     OUT.mkdir(parents=True, exist_ok=True)
     res = pd.DataFrame(rows)
-    res.to_csv(OUT / f"nbaiot_{a.detector}.csv", index=False)
+    tag = f"nbaiot_{a.detector}{'_dedup' if a.dedup else ''}"
+    res.to_csv(OUT / f"{tag}.csv", index=False)
     cols = ["auc", "rate_p95", "rate_p99", "rate_p99_5"]
     benign = res[res.family == "benign"].groupby("device")[["rate_p95", "rate_p99", "rate_p99_5"]].mean()
     fam = res[res.family != "benign"].groupby(["device", "family"])[cols].mean()
@@ -89,7 +93,7 @@ def main():
     print(fam.round(3).to_string())
     print("\n== per attack type, mean over devices")
     print(res[res.family != "benign"].groupby("group")[cols].mean().round(3).to_string())
-    print("\nsaved", OUT / f"nbaiot_{a.detector}.csv")
+    print("\nsaved", OUT / f"{tag}.csv")
 
 
 if __name__ == "__main__":
