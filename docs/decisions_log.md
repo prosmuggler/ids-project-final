@@ -54,3 +54,10 @@
 - Unseen floods (DDoS/DoS/Mirai) are alarmed 100% but almost never labelled unknown (confidently assigned to another flood family).
 - "detected" = alarm raised (labelled anything but benign); "unknown" and "misassigned" are reported separately.
 - Validation and test agree within ~0.003; operating points are chosen on validation.
+
+## Objective 3 - hybrid and detector comparison (update)
+- CICIoT2023 test, 99th pct, tau 0.6 (unseen detected / benign false alarms / known macro-F1): gate 50.7% / 0.7% / 0.475; hybrid-guard 68.2% / 5.7% / 0.705; supervised 87.5% / 18.3% / 0.713; hybrid-or 94.4% / 34.9% / 0.719. No variant dominates: detection trades against false alarms because benign and attack flows overlap in the features.
+- Operating point chosen on validation (false-alarm budget <= 5%): 99th pct, tau 0.7. Test: hybrid-guard 62.5% detected / 3.3% false alarms / known macro-F1 0.691 (validation predicted 62.2% / 3.2%); hybrid-or 96.1% / 43.4%; 19.8% of known attacks reported unknown by guard.
+- WSN-DS: guard = hybrid-or, 87% detected at 1.1% false alarms, known macro-F1 0.971 (gate: 35% detected).
+- Mean per-category detection at the 99th percentile (CICIoT2023 / WSN-DS): One-Class SVM 0.53 / 0.81, autoencoder 0.51 / 0.87, LOF 0.46 / 0.42, Isolation Forest 0.36 / 0.11. All four miss Spoofing and Web (5-12%). One-Class SVM and LOF: one seed, 20k benign subsample.
+- N-BaIoT (115 features, 9 devices, 35 Mirai + 45 BASHLITE files, no labels inside). One benign-only detector per device; benign rows split in time order 70/15/15; attack files used only as test data. Devices 1-2, autoencoder: Mirai 100%, gafgyt combo/junk/scan 100%, gafgyt tcp/udp missed on device 2. Device 2 benign false alarms 5.3% at the 99th pct (nominal 1%): only ~2,000 benign validation rows.
