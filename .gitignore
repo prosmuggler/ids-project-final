@@ -12,3 +12,4 @@ catboost_info/
 mlflow.db
 results/tuning/optuna.db
 results/final/probs/
+results/anomaly/scores_*.npy

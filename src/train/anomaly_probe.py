@@ -39,13 +39,14 @@ def load(ds):
     return feats, parts
 
 
-def iforest_scores(Xb_tr, Xb_val, X_test, seed):
+def iforest_scores(Xb_tr, Xb_val, X_test, seed, X_val_all=None):
     from sklearn.ensemble import IsolationForest
     m = IsolationForest(n_estimators=200, max_samples=256, random_state=seed, n_jobs=-1).fit(Xb_tr)
-    return -m.score_samples(Xb_val), -m.score_samples(X_test)       # higher = more anomalous
+    full = None if X_val_all is None else -m.score_samples(X_val_all)
+    return -m.score_samples(Xb_val), -m.score_samples(X_test), full  # higher = more anomalous
 
 
-def ae_scores(Xb_tr, Xb_val, X_test, seed, epochs=100, patience=8, bs=512):
+def ae_scores(Xb_tr, Xb_val, X_test, seed, epochs=100, patience=8, bs=512, X_val_all=None):
     import torch
     import torch.nn as nn
     sc = StandardScaler().fit(Xb_tr)                                 # fit on BENIGN train only
@@ -87,7 +88,7 @@ def ae_scores(Xb_tr, Xb_val, X_test, seed, epochs=100, patience=8, bs=512):
                 break
     net.load_state_dict(best_state)
     print(f"    autoencoder: {ep} epochs, best benign-val MSE {best:.4f}", flush=True)
-    return err(va), err(te)
+    return err(va), err(te), (None if X_val_all is None else err(prep(X_val_all)))
 
 
 def evaluate(s_val, s_test, test, ds):
@@ -115,6 +116,7 @@ def main():
     ap.add_argument("--dataset", required=True, choices=list(BENIGN))
     ap.add_argument("--detector", required=True, choices=["iforest", "ae"])
     ap.add_argument("--seeds", default="42,43,44")
+    ap.add_argument("--save-scores", action="store_true", help="save per-row scores for hybrid.py")
     a = ap.parse_args()
 
     feats, parts = load(a.dataset)
@@ -127,10 +129,15 @@ def main():
           f"test rows={len(test):,} features={len(feats)}")
 
     rows = []
+    OUT.mkdir(parents=True, exist_ok=True)
     for seed in [int(s) for s in a.seeds.split(",")]:
         t0 = time.time()
         fn = iforest_scores if a.detector == "iforest" else ae_scores
-        s_val, s_test = fn(Xb_tr, Xb_val, X_test, seed)
+        full_val = parts["val"][feats].to_numpy(np.float32) if a.save_scores else None
+        s_val, s_test, s_val_all = fn(Xb_tr, Xb_val, X_test, seed, X_val_all=full_val)
+        if a.save_scores:
+            np.save(OUT / f"scores_{a.dataset}_{a.detector}_s{seed}_val.npy", s_val_all.astype(np.float32))
+            np.save(OUT / f"scores_{a.dataset}_{a.detector}_s{seed}_test.npy", s_test.astype(np.float32))
         for r in evaluate(s_val, s_test, test, a.dataset):
             rows.append({"dataset": a.dataset, "detector": a.detector, "seed": seed, **r})
         print(f"  seed {seed} done in {time.time() - t0:.0f}s", flush=True)
