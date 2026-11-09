@@ -1,0 +1,6 @@
+block,cnn1d,dt,ensemble,lgbm,mlp,xgb
+ciciot2023/attack_type,4.0,6.0,1.0,2.0,5.0,3.0
+ciciot2023/binary,5.0,1.0,3.0,4.0,6.0,2.0
+ciciot2023/category,5.0,4.0,2.0,3.0,6.0,1.0
+wsn_ds/binary,4.0,6.0,2.0,1.0,5.0,3.0
+wsn_ds/category,5.0,4.0,2.0,1.0,6.0,3.0

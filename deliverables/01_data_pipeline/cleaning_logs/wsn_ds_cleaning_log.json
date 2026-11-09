@@ -1,0 +1,35 @@
+{
+  "dataset": "WSN-DS",
+  "dropped_identifier_columns": [
+    "id",
+    "Time",
+    "who CH"
+  ],
+  "rows_start": 374661,
+  "dropped_nan_or_inf": 0,
+  "dropped_duplicates": 41140,
+  "rows_after_cleaning": 333521,
+  "dropped_tiny_classes": [],
+  "dropped_constant_columns": [],
+  "rows_train": 233464,
+  "rows_val": 50028,
+  "rows_test": 50029,
+  "n_features": 15,
+  "feature_columns": [
+    "Is_CH",
+    "Dist_To_CH",
+    "ADV_S",
+    "ADV_R",
+    "JOIN_S",
+    "JOIN_R",
+    "SCH_S",
+    "SCH_R",
+    "Rank",
+    "DATA_S",
+    "DATA_R",
+    "Data_Sent_To_BS",
+    "dist_CH_To_BS",
+    "send_code",
+    "Expended_Energy"
+  ]
+}
