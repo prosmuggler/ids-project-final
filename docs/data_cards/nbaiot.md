@@ -37,3 +37,7 @@
 
 ## Reproduce
 `python -m src.train.nbaiot --detector ae --seeds 42,43,44` and `python -m src.train.nbaiot --detector iforest --seeds 42,43,44`
+
+## Findings after the first runs
+- `gafgyt.tcp` and `gafgyt.udp` are degenerate: only ~100 distinct rows each (device 2: 96 of 95,021 and 110 of 104,791), at least 98% of each file is one repeated feature vector. All other attack files have every row distinct. Their detection rates are a yes/no on one pattern per device; headline results use the other 8 attack types.
+- Benign duplicate rows (0-18.5%) were removed before the time split in the reported runs (`--dedup`); without removal, false alarms on devices 7 and 9 were 8.4% and 7.3% at the 99th percentile and fell to 0.3% after.
